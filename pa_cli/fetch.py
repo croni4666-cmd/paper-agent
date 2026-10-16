@@ -405,7 +405,7 @@ def _is_jats_article(body: bytes) -> bool:
         return False
     tag = root.tag.rsplit("}", 1)[-1]
     return tag == "article" or (
-        tag == "article-set" and any(
+        tag in ("article-set", "pmc-articleset") and any(
             child.tag.rsplit("}", 1)[-1] == "article" for child in root
         )
     )
@@ -824,6 +824,11 @@ def fetch(doi: str = None, title: str = None, md5_path: str = None,
     Returns: dict with 'source' / 'path' / 'size' / 'pdf_url' on success,
              or dict with 'error' on failure.
     """
+    if prefer not in FETCH_PREFERENCES:
+        return {"error": "fetch_invalid_preference",
+                "message": "Unsupported retrieval source",
+                "hint": "Choose a supported retrieval source"}
+
     if doi:
         partial_result = None
         # 1. arXiv channel — if DOI looks like arXiv (10.48550/arXiv.* or bare ID)

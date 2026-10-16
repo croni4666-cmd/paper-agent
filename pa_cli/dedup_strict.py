@@ -175,6 +175,8 @@ def find_dup_groups(
 
     # Step 2: union-find to merge groups via DOI and arxiv
     parent = {id(e): id(e) for e in entries}
+    from .record_identity import canonical_doi
+    group_dois={id(e):({canonical_doi(e['doi'])} if e.get('doi') else set()) for e in entries}
 
     def find(x):
         while parent[x] != x:
@@ -182,10 +184,13 @@ def find_dup_groups(
             x = parent[x]
         return x
 
-    def union(a, b):
+    def union(a, b, *, fuzzy=False):
         ra, rb = find(a), find(b)
+        if fuzzy and len(group_dois[ra] | group_dois[rb])>1:
+            return  # Similar titles cannot authorize deleting distinct DOI works.
         if ra != rb:
             parent[ra] = rb
+            group_dois[rb] |= group_dois[ra]
 
     # Merge by DOI
     for doi, group in by_doi.items():
@@ -212,11 +217,11 @@ def find_dup_groups(
                 continue
             if t1 == t2:
                 # exact title match
-                union(id(entries[i]), id(entries[j]))
+                union(id(entries[i]), id(entries[j]),fuzzy=True)
                 continue
             ratio = difflib.SequenceMatcher(None, t1, t2).ratio()
             if ratio >= fuzzy_threshold:
-                union(id(entries[i]), id(entries[j]))
+                union(id(entries[i]), id(entries[j]),fuzzy=True)
 
     # Step 4: collect groups
     groups: Dict[int, List[Dict]] = defaultdict(list)

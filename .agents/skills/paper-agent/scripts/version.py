@@ -1,77 +1,81 @@
 #!/usr/bin/env python3
-"""scripts/version.py — Show paper-agent version + dep status.
-
-Prints the installed paper-agent version, Python version, and key
-optional dependency status (playwright for JATS→PDF, etc.).
-Useful for first-time setup validation.
-
-Usage:
-    python scripts/version.py
-"""
+"""Probe the configured backend and browser instead of the host interpreter."""
 from __future__ import annotations
-
 import argparse
+from contextlib import redirect_stdout
+import importlib
 import json
+import platform
+import re
+import subprocess
 import sys
 from pathlib import Path
 
-SKILL_ROOT = Path(__file__).resolve().parent.parent
-PA_ROOT = SKILL_ROOT.parent.parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _pa_root import find_pa_python, find_pa_root
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Show paper-agent version + dep status (Codex Skill wrapper).",
-    )
-    parser.add_argument("--as-json", action="store_true", default=True, help="Output as JSON (default)")
-    args = parser.parse_args()
-
-    import platform
-    import importlib
-
-    info = {
-        "skill": "paper-agent",
-        "skill_version": "3.9.28.0",
-        "python": platform.python_version(),
-        "platform": platform.system(),
-    }
-
-    # Try to import pa_cli to get its version
+def runtime_probe():
+    info = {"runtime_python_version": platform.python_version(), "optional_deps": {}}
     try:
-        sys.path.insert(0, str(PA_ROOT))
-        from pa_cli import __version__ as pa_version
-        info["pa_cli_version"] = pa_version
-    except Exception as e:
-        info["pa_cli_version"] = None
-        info["pa_cli_error"] = str(e)
-
-    # Check optional deps
-    deps = ["playwright", "requests", "bibtexparser", "fitz", "yaml"]
-    info["optional_deps"] = {}
-    for dep in deps:
+        from pa_cli import __version__
+        info['pa_cli_version'] = __version__
+    except ImportError as exc:
+        info.update(pa_cli_version=None, pa_cli_error=str(exc))
+    for dep in ('playwright', 'requests', 'bibtexparser', 'fitz', 'yaml'):
         try:
-            mod = importlib.import_module(dep)
-            version = getattr(mod, "__version__", "unknown")
-            info["optional_deps"][dep] = {"installed": True, "version": version}
+            importlib.import_module(dep)
+            info['optional_deps'][dep] = {'installed': True}
         except ImportError:
-            info["optional_deps"][dep] = {"installed": False}
+            info['optional_deps'][dep] = {'installed': False}
+    info['jats_to_pdf_available'] = False
+    if info['optional_deps']['playwright']['installed']:
+        try:
+            from pa_cli.fetch_deadline import run_fetch
+            check=run_fetch({'_operation':'browser_status','render':True},10)
+            info['jats_to_pdf_available']=check.get('jats_to_pdf_available') is True
+            if check.get('error'):info['browser_error']='Browser check unavailable or timed out.'
+        except Exception as exc:
+            info['browser_error'] = type(exc).__name__+': browser check unavailable.'
+    return info
 
-    # Compute overall status
-    playwright_ok = info["optional_deps"].get("playwright", {}).get("installed", False)
-    info["jats_to_pdf_available"] = playwright_ok
-    info["recommendation"] = (
-        "OK" if info["pa_cli_version"] else
-        "paper-agent not installed. Run: pip install -e ."
-    )
-    if info["pa_cli_version"] and not playwright_ok:
-        info["recommendation"] = (
-            "paper-agent installed. For JATS→PDF rendering, also: "
-            "pip install playwright && python -m playwright install chromium"
-        )
 
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--as-json', action='store_true')
+    parser.add_argument('--runtime-probe', action='store_true', help=argparse.SUPPRESS)
+    args = parser.parse_args()
+    if args.runtime_probe:
+        # Optional libraries may print import warnings; keep the JSON channel clean.
+        with redirect_stdout(sys.stderr):
+            info = runtime_probe()
+        print(json.dumps(info))
+        return 0
+    root = find_pa_root()
+    runtime = find_pa_python(root)
+    skill = Path(__file__).resolve().parents[1] / 'SKILL.md'
+    match = re.search(r'^\s+version:\s*(\S+)', skill.read_text(encoding='utf-8'), re.M)
+    info = {'skill': 'paper-agent', 'skill_version': match[1].strip('"\'') if match else None,
+            'python': platform.python_version(), 'platform': platform.system(),
+            'runtime_python': runtime, 'pa_root': str(root) if root else None}
+    try:
+        # -c preserves cwd import precedence for a configured source checkout.
+        script = Path(__file__).resolve()
+        probe = subprocess.run([runtime, '-c',
+            'import runpy,sys; sys.argv=[sys.argv[1],"--runtime-probe"]; runpy.run_path(sys.argv[0],run_name="__main__")',
+            str(script)], cwd=str(root) if root else None, capture_output=True,
+            text=True, encoding='utf-8', timeout=30)
+        if probe.returncode:
+            raise RuntimeError(probe.stderr[-1000:])
+        info.update(json.loads(probe.stdout))
+    except (OSError, subprocess.SubprocessError, ValueError, RuntimeError) as exc:
+        info.update(pa_cli_version=None, pa_cli_error=str(exc), jats_to_pdf_available=False)
+    info['recommendation'] = ('OK' if info.get('jats_to_pdf_available') else
+        'Backend available; install or repair Chromium for JATS-to-PDF.' if info.get('pa_cli_version') else
+        'Backend unavailable; check runtime.local.json and run bootstrap.py --check.')
     print(json.dumps(info, indent=2))
-    return 0
+    return 0 if info.get('pa_cli_version') else 1
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == '__main__':
+    raise SystemExit(main())

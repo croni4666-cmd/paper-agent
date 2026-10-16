@@ -87,6 +87,8 @@ def format_authors(authors: List[str]) -> str:
     for a in authors:
         if not a:
             continue
+        if ',' in a:
+            formatted.append(a.strip());continue
         parts = a.strip().split()
         if len(parts) >= 2:
             last = parts[-1]
@@ -145,6 +147,8 @@ def to_bibtex(paper: Dict, seen: Optional[set] = None) -> str:
     doi = (paper.get("doi") or "").replace("https://doi.org/", "").strip()
     if doi:
         fields.append(("doi", doi))
+    for name in ('abstract','pmid','pmcid','license'):
+        if paper.get(name):fields.append((name,escape_bibtex(str(paper[name]))))
     # URL priority: oa_url > doi.org URL
     url = paper.get("oa_url") or (f"https://doi.org/{doi}" if doi else "")
     if url:

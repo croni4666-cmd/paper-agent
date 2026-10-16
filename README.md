@@ -1,3 +1,7 @@
+# paper-agent 3.9.30 maintenance line
+
+This release packages the stress-tested 3.9 runtime repairs and optional Europe PMC source. It does not replace the 4.1 mainline. Review output is an auditable inventory; scientific claim/conflict synthesis is not implemented here. See `docs/stable-3.9.30.md`.
+
 # paper-agent
 
 A local-first research CLI and Codex skill for finding papers, retrieving open copies, organizing a corpus, and producing review-ready outputs.

@@ -179,3 +179,12 @@ Thumbs.db
 /test_output/**/*.xml
 # Machine-local skill backend paths
 runtime.local.json
+
+.venv-release/
+.local-test-runs/
+.pytest_cache/
+runtime.local.json
+.venv-codex/
+dist/
+build/
+*.egg-info/

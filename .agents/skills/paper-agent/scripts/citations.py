@@ -1,116 +1,82 @@
 #!/usr/bin/env python3
-"""scripts/citations.py —Wrapper for `pa citations` (OpenAlex citation walk).
-
-Walks the citation graph for a paper via OpenAlex API (no key required).
-Forward = papers THIS paper cites; backward = papers that cite THIS paper.
-
-Usage:
-    python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
-    python scripts/citations.py 10.1038/nature12373 --direction forward --output forward_cites.json
-"""
+"""Walk OpenAlex citations: forward = citing papers, backward = references."""
 from __future__ import annotations
-
 import argparse
 import json
-import os
+from pathlib import Path
 import subprocess
 import sys
-from pathlib import Path
 
-SKILL_ROOT = Path(__file__).resolve().parent.parent
-PYTHON = sys.executable
-
-# Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_root import find_pa_python, find_pa_root, get_install_instructions
+
+# No "pa citations" CLI exists. Use its library in the selected runtime.
+# User inputs are separate argv values, never interpolated into code.
+WORKER = '''import json, sys
+from contextlib import redirect_stdout
+with redirect_stdout(sys.stderr):
+    from pa_cli.citations import citation_walk
+    directions = ('forward', 'backward') if sys.argv[2] == 'both' else (sys.argv[2],)
+    walks = {d: citation_walk(sys.argv[1], direction=d, limit=int(sys.argv[3])) for d in directions}
+print(json.dumps(walks, ensure_ascii=False))
+'''
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Walk citation graph via OpenAlex (paper-agent wrapper).",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  %(prog)s 10.1038/nature12373 --direction both --limit 50
-  %(prog)s 10.1038/nature12373 --direction forward --output forward.json
-  %(prog)s 10.1038/nature12373 --direction backward --limit 100
-        """,
-    )
-    parser.add_argument("doi", help="Paper DOI (e.g. 10.1038/nature12373)")
-    parser.add_argument(
-        "--direction",
-        choices=["forward", "backward", "both"],
-        default="both",
-        help="Which direction to walk (default: both)",
-    )
-    parser.add_argument("--limit", type=int, default=50, help="Max papers to return (default: 50)")
-    parser.add_argument("--output", help="Optional output file (default: stdout)")
-    parser.add_argument("--quiet", action="store_true", help="Suppress per-paper progress")
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('doi')
+    parser.add_argument('--direction', choices=['forward', 'backward', 'both'], default='both')
+    parser.add_argument('--limit', type=int, default=50, help='Maximum records per direction')
+    parser.add_argument('--output', help='JSON file, relative to caller directory')
+    parser.add_argument('--quiet', action='store_true')
     args = parser.parse_args()
-
-    # Find paper-agent root
-    pa_root = find_pa_root()
-    if not pa_root:
-        print(json.dumps({
-            "error": "pa_cli_not_found",
-            "message": "paper-agent (pa_cli) is not installed in this Python environment.",
-            "hint": get_install_instructions().strip(),
-        }, indent=2), file=sys.stderr)
+    if args.limit < 1:
+        parser.error('--limit must be positive')
+    root = find_pa_root()
+    if not root:
+        print(json.dumps({'error': 'pa_cli_not_found', 'hint': get_install_instructions()}), file=sys.stderr)
         return 4
-
-
-    cmd = [
-        PYTHON, "-m", "pa_cli.cli", "citations",
-        args.doi,
-        "--direction", args.direction,
-        "--limit", str(args.limit),
-    ]
-    if args.output:
-        cmd.extend(["--output", args.output])
-    if args.quiet:
-        cmd.append("--quiet")
-
+    runtime = find_pa_python(root)
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
-            cwd=str(pa_root),
-        )
-    except subprocess.TimeoutExpired:
-        print(json.dumps({
-            "error": "citations_timeout",
-            "message": "`pa citations` exceeded 120s timeout.",
-            "hint": "OpenAlex can be slow for high-citation papers; try --limit 20.",
-        }), file=sys.stderr)
+        result = subprocess.run([runtime, '-c', WORKER, args.doi, args.direction, str(args.limit)],
+                                cwd=str(root), capture_output=True, text=True, encoding='utf-8', timeout=120)
+    except (OSError, subprocess.SubprocessError) as exc:
+        print(json.dumps({'error': 'citation_worker_failed', 'message': str(exc)}), file=sys.stderr)
         return 2
-
-    if result.returncode == 0:
+    if result.returncode:
+        print(json.dumps({'error': 'citation_worker_failed', 'exit_code': result.returncode,
+                          'stderr_tail': result.stderr[-500:]}), file=sys.stderr)
+        return 1
+    try:
+        walks = json.loads(result.stdout)
+        if not isinstance(walks, dict) or not walks or any(
+                not isinstance(w, dict) or (not isinstance(w.get('results'), list) and not w.get('error'))
+                for w in walks.values()):
+            print(json.dumps({'error': 'citation_walk_failed', 'walks': walks}), file=sys.stderr)
+            return 1
+        successful=[w for w in walks.values() if not w.get('error') and w.get('status','ok')!='error']
+        if not successful:
+            print(json.dumps({'error':'citation_walk_failed','walks':walks}),file=sys.stderr)
+            return 1
+        papers = [paper for walk in walks.values() for paper in walk.get('results',[])]
+        status='partial' if any(w.get('error') or w.get('status')=='partial' for w in walks.values()) else 'ok'
+        data = {'doi': args.doi, 'direction': args.direction, 'results': papers,
+                'status':status,'count': len(papers), 'walks': walks}
+        if result.stderr.strip():
+            data['backend_warnings'] = result.stderr[-1000:]
         if args.output:
-            # pa writes JSON to --output file
-            try:
-                with open(args.output, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                print(json.dumps({
-                    "status": "completed",
-                    "doi": args.doi,
-                    "direction": args.direction,
-                    "output_file": args.output,
-                    "count": data.get("count", len(data.get("forward", [])) + len(data.get("backward", []))),
-                }, indent=2))
-            except (json.JSONDecodeError, OSError) as e:
-                print(json.dumps({"status": "completed", "output": args.output, "note": str(e)}))
+            output = Path(args.output).expanduser().resolve()
+            output.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+            print(json.dumps({'status': status, 'output_file': str(output), 'count': len(papers)}))
         else:
-            # pa prints to stdout
-            print(result.stdout, end="")
-        return 0
-
-    print(json.dumps({
-        "error": "pa_citations_failed",
-        "exit_code": result.returncode,
-        "doi": args.doi,
-        "stderr_tail": result.stderr[-500:] if result.stderr else "",
-    }, indent=2), file=sys.stderr)
-    return 1
+            print(json.dumps(data, ensure_ascii=False, indent=2))
+    except (OSError, ValueError, TypeError) as exc:
+        print(json.dumps({'error': 'invalid_citations_output', 'message': str(exc)}), file=sys.stderr)
+        return 1
+    if result.stderr and not args.quiet:
+        print(result.stderr, end='', file=sys.stderr)
+    return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == '__main__':
+    raise SystemExit(main())

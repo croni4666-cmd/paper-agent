@@ -15,6 +15,27 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`.
 
 ## [Unreleased]
 
+## [3.9.30] - 2026-10-16
+
+Maintenance release based on fc2a68b. It does not replace the 4.1 main line.
+
+- Add explicit opt-in Europe PMC public search without credentials or automatic
+  retries; preserve PMID/PMCID, abstract comparisons, license and provenance.
+- Expose controlled concept queries, exact-response caching and official-source
+  listings. Keep single-query/no-expansion defaults; do not imply efficacy.
+- Preserve partial failures, citation graph limits, source identities and rich
+  abstracts across merging and BibTeX export. Report transport failures honestly.
+- Bound doctor/browser probes and PDF parsing; reject structurally invalid PDFs
+  before switching the cache index. Serialize PubMed throttle reservations.
+- Keep corpus output as an auditable inventory and exclude its own generated
+  output from subsequent indexing. No automatic clinical conflict adjudication.
+- Repair installed-skill wrappers and document optional review/browser/MCP
+  dependencies. Ship synthetic regression fixtures; exclude private runtime paths.
+
+Validation evidence and limitations are attached to the GitHub Release.
+
+### Earlier unreleased work
+
 ### Native fetch reliability (2026-09-10)
 
 - Resolve relative output directories before changing the child process working directory, so PDFs target the caller's requested location.

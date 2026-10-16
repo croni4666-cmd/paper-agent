@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "paper-agent"
-version = "3.9.29.1"
+version = "3.9.30"
 description = "Multi-engine academic paper search, full-text fetch, and sample pool for research workflows"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -41,7 +41,7 @@ dependencies = [
     "click>=8.1",
     "arxiv>=2.1,<5",
     "numpy>=1.24",
-    "requests>=2.32,<2.34",
+    "requests>=2.34.2,<2.35",
     "requests-cache>=1.0",
     "charset-normalizer>=3.0",
     "cryptography>=41.0",
@@ -50,6 +50,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+review = ["PyMuPDF>=1.23"]
+test = ["pytest>=7", "PyMuPDF>=1.23"]
 llm-rerank = ["openai>=1.0", "tiktoken>=0.4"]
 cross-encoder = ["sentence-transformers>=2.2", "torch>=2.0", "transformers>=4.30"]
 async-fetch = ["aiohttp>=3.9", "aiohttp-client-cache>=0.10"]
@@ -83,7 +85,7 @@ Changelog = "https://github.com/croni4666-cmd/paper-agent/blob/main/CHANGELOG.md
 packages = ["pa_cli"]
 
 [tool.setuptools.package-data]
-pa_cli = ["py.typed"]
+pa_cli = ["py.typed", "data/*.json", "data/*.csl", "data/*.txt"]
 
 # Note: AGPL-3.0 + No-AI-Training restriction. See LICENSE and NO_AI_TRAINING.md.
 # This software may NOT be used to train, fine-tune, validate, benchmark, or

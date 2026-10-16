@@ -19,11 +19,12 @@ import sys
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
-PYTHON = sys.executable
 
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_root import find_pa_python, find_pa_root, get_install_instructions  # noqa: E402
+
+PYTHON = find_pa_python()
 
 
 def main() -> int:
@@ -106,7 +107,7 @@ Examples:
 
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True,
+            cmd, capture_output=True, text=True, encoding="utf-8",
             timeout=args.max_total_sec + 60,
             cwd=str(pa_root),
         )

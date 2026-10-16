@@ -64,6 +64,6 @@ class CacheIntegrityTests(unittest.TestCase):
                 return original(path, target)
             with patch.object(Path, 'replace', replace):
                 with self.assertRaises(OSError):
-                    cache.cache_put(DOI, b'%PDF new data', root=root)
+                    cache.cache_put(DOI, make_pdf(2), root=root)
             self.assertEqual(len(list(root.iterdir())), 2)
             self.assertEqual(cache.cache_get(DOI, root=root)['sha256'], hashlib.sha256(PDF).hexdigest())

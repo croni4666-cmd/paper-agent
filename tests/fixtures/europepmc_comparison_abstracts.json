@@ -1,0 +1,17 @@
+[
+  {
+    "pmid": "comparison-1",
+    "raw": "<p>P < 0.01, heterogeneity I<sup>2</sup> = 0%.</p>",
+    "expected": "P < 0.01, heterogeneity I 2 = 0%."
+  },
+  {
+    "pmid": "comparison-2",
+    "raw": "<p>Result P<0.001. Follow-up is retained. P>0.05.</p>",
+    "expected": "Result P<0.001. Follow-up is retained. P>0.05."
+  },
+  {
+    "pmid": "comparison-3",
+    "raw": "<p>Score &lt; 3; confidence bound &gt; 1.</p>",
+    "expected": "Score < 3; confidence bound > 1."
+  }
+]

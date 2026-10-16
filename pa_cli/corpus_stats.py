@@ -78,9 +78,10 @@ def compute_corpus_stats(refs_bib_path: Path, top_n: int = 10) -> Dict[str, Any]
         - top_venues: [{"name": "J Health Econ", "count": 5}, ...]  (top N, desc)
         - bibtex_path: absolute path of the source file
 
-    Missing file: returns all-zero dict (does NOT raise).
+    Missing/unreadable file: explicit error with unknown counts, never zero papers.
     """
     out: Dict[str, Any] = {
+        "status": "ok",
         "n_papers": 0,
         "n_with_doi": 0,
         "n_without_doi": 0,
@@ -96,13 +97,13 @@ def compute_corpus_stats(refs_bib_path: Path, top_n: int = 10) -> Dict[str, Any]
 
     refs_bib_path = Path(refs_bib_path)
     if not refs_bib_path.exists():
-        return out
+        return {**out,'status':'error','error':'corpus_missing','n_papers':None,'n_with_doi':None,'n_without_doi':None}
 
     from .scaffold import load_bibtex
     try:
         entries = load_bibtex(refs_bib_path)
     except Exception:
-        return out
+        return {**out,'status':'error','error':'corpus_read_failed','n_papers':None,'n_with_doi':None,'n_without_doi':None}
 
     out["n_papers"] = len(entries)
 
@@ -166,6 +167,8 @@ def compute_corpus_stats(refs_bib_path: Path, top_n: int = 10) -> Dict[str, Any]
 
 def format_corpus_stats_human(stats: Dict[str, Any]) -> str:
     """Format corpus stats as a human-readable string."""
+    if stats.get('status')=='error':
+        return f"[corpus-stats] unavailable: {stats.get('error','corpus_error')} ({stats['bibtex_path']})"
     lines = []
     lines.append(f"[corpus-stats] {stats['bibtex_path']}")
     lines.append(f"  total:         {stats['n_papers']} papers")

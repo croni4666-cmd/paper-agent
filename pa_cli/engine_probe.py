@@ -9,6 +9,7 @@ from typing import Any, Callable, Iterable
 PUBLIC_SEARCH_ENGINES = (
     "crossref", "openalex", "arxiv", "aminer", "pubmed", "clinicaltrials",
 )
+OPTIONAL_SEARCH_ENGINES = ('europepmc',)
 
 def _redact_message(message: object) -> str:
     """Emit only fixed diagnostics: provider exceptions may contain secrets."""
@@ -34,8 +35,9 @@ def probe_search_engines(
 ) -> dict[str, Any]:
     """Probe engines one at a time and return a JSON-serializable report."""
     engines = tuple(dict.fromkeys(engines))
-    if not engines or any(engine not in PUBLIC_SEARCH_ENGINES for engine in engines):
-        raise ValueError("Choose one or more public engines: " + ", ".join(PUBLIC_SEARCH_ENGINES))
+    supported = PUBLIC_SEARCH_ENGINES + OPTIONAL_SEARCH_ENGINES
+    if not engines or any(engine not in supported for engine in engines):
+        raise ValueError("Choose one or more public engines: " + ", ".join(supported))
     if not query.strip():
         raise ValueError("Query must not be empty")
     if isinstance(limit, bool) or not isinstance(limit, int) or not 1 <= limit <= 5:
@@ -53,7 +55,7 @@ def probe_search_engines(
             status = result.get("engine_status", {}).get(engine, {})
             rows.append({
                 "engine": engine,
-                "status": status.get("status") if status.get("status") in {"ok", "error", "skipped", "rate_limited"} else "error",
+                "status": status.get("status") if status.get("status") in {"ok", "partial", "error", "skipped", "rate_limited"} else "error",
                 "result_count": int(result.get("by_engine", {}).get(engine, 0)),
                 "elapsed_sec": round(time.monotonic() - started, 3),
                 "message": _redact_message(status.get("message", "")),

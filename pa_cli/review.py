@@ -1,22 +1,23 @@
 """
-pa_cli.review — synthesize lit review section from a corpus of papers.
+pa_cli.review — auditable source inventory from a corpus of papers.
 
 Pipeline:
   1. Walk corpus_dir for *.pdf / *.md / *.txt (DOCX NOT supported — 2026-07-05)
   2. Extract text:
        - PDF: PyMuPDF
        - MD / TXT: read as UTF-8 (with BOM / encoding-error fallback)
-  3. Classify each paper (full-text vs abstract-only based on word count)
+  3. Record extracted text and unverified completeness; deduplicate exact conversions
   4. Build standardized metadata block (authors, year, DOI, venue)
   5. Generate lit review markdown following the v3.2 template
 
-Output is a markdown file structured for direct use in academic lit review.
+Output is a source inventory. Scientific synthesis and completeness need review.
 
 [ P1-4 FORMAT-EXPANSION ] (2026-07-05): added MD + TXT readers per user request
   (real corpus is 95% MD; previously only PDF was supported, which silently ignored
   most files).
 """
 
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -122,8 +123,31 @@ def build_corpus_index(corpus_dir: Path, word_count_min: int = 1000) -> List[Dic
 
     for f in files:
         ext = f.suffix.lower()
-        meta = parse_pdf_metadata(f) if ext == ".pdf" else {}
-        text_data = extract_text(f)
+        # Bind extraction, metadata and provenance to the same immutable bytes.
+        meta = {}
+        raw = b''
+        try:
+            raw = f.read_bytes()
+            if ext == '.pdf':
+                if not HAS_PYMUPDF:
+                    raise RuntimeError('pymupdf-not-installed')
+                with fitz.open(stream=raw, filetype='pdf') as doc:
+                    metadata = doc.metadata or {}
+                    meta = {'title':metadata.get('title',''), 'author':metadata.get('author',''),
+                            'subject':metadata.get('subject','')}
+                    text_data = {'text':'\n'.join(page.get_text('text') for page in doc),
+                                 'pages':len(doc), 'error':None}
+            else:
+                for encoding in ['utf-8-sig','utf-8','gbk','latin-1']:
+                    try:
+                        content = raw.decode(encoding);break
+                    except UnicodeDecodeError:
+                        continue
+                text_data = {'text':content,'pages':1,'error':None}
+        except Exception as exc:
+            text_data = {'text':'','pages':0,'error':type(exc).__name__}
+        if ext in ('.md','.txt') and text_data['text'].splitlines()[:1] == ['# Corpus inventory — not scientific synthesis']:
+            continue  # Do not ingest this tool's own generated output on the next run.
         word_count = len(text_data["text"].split()) if text_data["text"] else 0
         # Extract DOI from filename or text
         doi = ""
@@ -147,6 +171,23 @@ def build_corpus_index(corpus_dir: Path, word_count_min: int = 1000) -> List[Dic
                 title = f.stem.replace("_", " ").replace("-", " ")
         elif not title:
             title = f.stem.replace("_", " ")
+        normalized = re.sub(r'---\s*PDF PAGE\s+\d+\s*---', ' ', text_data['text'], flags=re.I)
+        tokens = re.findall(r'\w+', normalized.casefold())
+        canonical_text = re.sub(r'\s+', ' ', normalized).strip()
+        source = {'path':str(f),'sha256':hashlib.sha256(raw).hexdigest(),
+                  'bytes':len(raw),'extension':ext,'extraction_error':text_data.get('error')}
+        # Only collapse exact extracted text after known conversion page
+        # markers/whitespace. Preserve negation, punctuation and scientific
+        # comparisons; an unverified DOI/name/similarity is insufficient.
+        duplicate = None
+        for previous in papers:
+            exact = bool(canonical_text) and canonical_text == previous['_canonical']
+            if not text_data.get('error') and exact:
+                duplicate = previous;break
+        if duplicate is not None:
+            duplicate['source_files'].append(source)
+            duplicate['duplicate_match'] = 'exact_extracted_text_except_page_markers_and_whitespace'
+            continue
         papers.append({
             "path": str(f),
             "filename": f.name,
@@ -157,71 +198,46 @@ def build_corpus_index(corpus_dir: Path, word_count_min: int = 1000) -> List[Dic
             "doi": doi,
             "word_count": word_count,
             "pages": text_data["pages"],
-            "is_full_text": word_count >= word_count_min,
+            "is_full_text": False,
+            "completeness": "unverified",
+            "text_available": bool(text_data['text']),
+            "long_text": word_count >= word_count_min,
+            "evidence_basis": "extracted_text" if text_data['text'] else "unavailable",
+            "source_files": [source],
+            "evidence_id": 'E-'+hashlib.sha256((canonical_text if canonical_text else
+                            'unavailable:'+source['sha256']+':'+str(f.resolve())).encode('utf-8')).hexdigest()[:16],
+            "_canonical": canonical_text,
             "error": text_data.get("error"),
         })
+    for paper in papers:
+        paper.pop('_canonical',None)
     return papers
 
 
 def synthesize(corpus_dir: Path, template: str = "v32",
                word_count_min: int = 1000) -> str:
-    """Generate lit review markdown from corpus."""
+    """Generate an auditable inventory, never an automatic scientific verdict."""
     corpus = build_corpus_index(corpus_dir, word_count_min)
-    if not corpus:
-        return f"# Lit Review\n\n(empty corpus: {corpus_dir})\n"
-    full_text = [p for p in corpus if p["is_full_text"]]
-    abstract_only = [p for p in corpus if not p["is_full_text"]]
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    return _inventory_markdown(corpus_dir, corpus)
 
-    md = []
-    md.append(f"# Lit Review (auto-synthesized from corpus, {date_str})\n")
-    md.append(f"\n**Corpus**: {corpus_dir}\n")
-    md.append(f"**Total papers**: {len(corpus)} ({len(full_text)} full-text, {len(abstract_only)} abstract-only)\n")
-    md.append(f"**Template**: {template}\n")
-    md.append(f"**Total word count**: {sum(p['word_count'] for p in corpus):,}\n")
-    md.append("\n---\n\n## Papers (in extraction order)\n\n")
 
-    for i, p in enumerate(corpus, 1):
-        status = "✅ FULL TEXT" if p["is_full_text"] else "⚠ abstract-only"
-        md.append(f"### {i}. {p['title']} {status}\n\n")
-        md.append(f"- **File**: `{p['filename']}`\n")
-        if p["author"]:
-            md.append(f"- **Author(s)**: {p['author']}\n")
-        if p["subject"]:
-            md.append(f"- **Venue / Year**: {p['subject']}\n")
-        if p["doi"]:
-            md.append(f"- **DOI**: {p['doi']}\n")
-        md.append(f"- **Pages**: {p['pages']} | **Words**: {p['word_count']:,}\n")
-        if p.get("error"):
-            md.append(f"- **Error**: {p['error']}\n")
-        md.append("\n")
-
-    # Citation impact ranking
-    md.append("\n---\n\n## Corpus summary\n\n")
-    md.append(f"- **Full-text coverage**: {len(full_text)}/{len(corpus)} ({100*len(full_text)//max(len(corpus),1)}%)\n")
-    md.append(f"- **Total words extracted**: {sum(p['word_count'] for p in corpus):,}\n")
-    md.append(f"- **DOIs identified**: {sum(1 for p in corpus if p['doi'])}\n")
-
-    # Open issues
-    if abstract_only:
-        md.append(f"\n### Open issues ({len(abstract_only)} abstract-only papers)\n\n")
-        md.append("Per paper-agent v4 principle, after 5 minutes of Cloudflare challenge failure, "
-                  "the CLI surfaces these as handoff to user browser action:\n\n")
-        for p in abstract_only:
-            md.append(f"- `{p['filename']}` ({p['word_count']} words) — {p['title'][:80]}\n")
-
-    # [P0-12] Cite/abstract coverage by language
-    # Honest caveat: Chinese queries have lower cite/abstract coverage than English
-    # due to S2 + Crossref returning shallow entries for Chinese papers.
-    # See ROADMAP [P0-12] for the honest verdict.
-    md.append("\n### Coverage caveat (per ROADMAP [P0-12])\n\n")
-    md.append("Cite/abstract coverage varies by query language:\n")
-    md.append("- **English queries** (e.g. \"transformer attention\"): ~47% cite, ~21% abstract\n")
-    md.append("- **Chinese queries** (e.g. \"金融科技 风险承担\"): ~21% cite, ~6% abstract (plateau)\n")
-    md.append("- **S2 + Crossref return shallow entries** for Chinese papers (title + basic cite only);\n")
-    md.append("  `influential_cite_count`, `reference_count`, `tldr` are 0 for most Chinese papers\n")
-    md.append("- **For mixed/bilingual queries**: paper-agent `pa search --engine all` gives recall;\n")
-    md.append("This caveat is **terminal** under hobbyist budget (per ROADMAP [P0-12] verdict).\n")
-
-    md.append("\n---\n*Generated by pa-cli v3.2 review command. For richer synthesis, use the llm-driven review template with explicit full-text quotes per paper.*\n")
-    return "".join(md)
+def _inventory_markdown(corpus_dir: Path, corpus: List[Dict[str, Any]]) -> str:
+    files = sum(len(p['source_files']) for p in corpus)
+    lines = ['# Corpus inventory — not scientific synthesis', '',
+             f'**Corpus**: {corpus_dir}', f'**Input files**: {files}',
+             f'**Unique sources**: {len(corpus)}', '',
+             'Text extraction does not verify article completeness, eligibility or scientific claims.',
+             'Support/refute decisions and cross-study conflict interpretation require separate evidence appraisal.', '']
+    for i,p in enumerate(corpus,1):
+        lines += [f"## {i}. [{p['evidence_id']}] {p['title']}",
+                  '- Basis: '+p['evidence_basis']+'; completeness unverified',
+                  f"- Words: {p['word_count']}; pages: {p['pages']}",
+                  '- DOI candidate (not identity-verified): '+(p['doi'] or 'unresolved')]
+        for s in p['source_files']:
+            lines.append(f"- Source: {s['path']} | SHA256: {s['sha256']}")
+        if p.get('duplicate_match'):
+            lines.append('- Conversion grouping heuristic: '+p['duplicate_match'])
+        if p.get('error'):
+            lines.append('- Extraction error: '+p['error'])
+        lines.append('')
+    return '\n'.join(lines)+'\n'

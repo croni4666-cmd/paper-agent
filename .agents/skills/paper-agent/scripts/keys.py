@@ -20,11 +20,12 @@ import sys
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
-PYTHON = sys.executable
 
 # Add this script's directory to sys.path so we can import _pa_root
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _pa_root import find_pa_root, get_install_instructions  # noqa: E402
+from _pa_root import find_pa_python, find_pa_root, get_install_instructions  # noqa: E402
+
+PYTHON = find_pa_python()
 
 
 def main() -> int:
@@ -64,11 +65,12 @@ Examples:
     cmd = [PYTHON, "-m", "pa_cli.cli", "keys", args.command]
     if args.service_id:
         cmd.append(args.service_id)
-    cmd.append("--json")  # pa uses --json, not --as-json
+    if args.command == 'list':
+        cmd.append("--json")
 
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=30,
+            cmd, capture_output=True, text=True, encoding="utf-8", timeout=30,
             cwd=str(pa_root),
         )
     except subprocess.TimeoutExpired:
@@ -79,7 +81,10 @@ Examples:
         return 2
 
     if result.returncode == 0:
-        print(result.stdout, end="")
+        if args.command == 'audit':
+            print(json.dumps({'status': 'completed', 'audit_text': result.stdout}, ensure_ascii=False))
+        else:
+            print(result.stdout, end="")
         return 0
 
     # pa keys returns error JSON on failure (e.g. unknown service)

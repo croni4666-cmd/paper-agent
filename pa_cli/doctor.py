@@ -7,12 +7,23 @@ from typing import Any, Dict
 
 
 def _chromium_installed() -> bool:
+    from .fetch_deadline import run_fetch
+    result=run_fetch({'_operation':'browser_status','render':False},5)
+    return result.get('installed') is True
+
+
+def browser_status_worker(render=False):
     try:
         from playwright.sync_api import sync_playwright
         with sync_playwright() as playwright:
-            return Path(playwright.chromium.executable_path).is_file()
+            installed=Path(playwright.chromium.executable_path).is_file()
+            if not render:return {'installed':installed}
+            with playwright.chromium.launch(timeout=5000) as browser:
+                page=browser.new_page()
+                page.set_content('<html><body>Paper Agent runtime check</body></html>',timeout=5000)
+                return {'installed':installed,'jats_to_pdf_available':page.pdf().startswith(b'%PDF-')}
     except Exception:
-        return False
+        return {'installed':False,'jats_to_pdf_available':False,'error':'browser_unavailable'}
 
 
 def _dependency_status() -> Dict[str, bool]:
@@ -47,8 +58,8 @@ def build_report() -> Dict[str, Any]:
         playwright_summary = "Playwright is not installed."
         playwright_action = "Install the browser extra, then install Chromium."
     elif not chromium_installed:
-        playwright_summary = "Playwright is installed but Chromium is unavailable."
-        playwright_action = "Install Chromium with the Playwright installer."
+        playwright_summary = "Playwright is installed; Chromium is unavailable or its check could not complete."
+        playwright_action = "Check local browser execution; install Chromium if it is missing."
     else:
         playwright_summary = "Playwright and Chromium are ready."
         playwright_action = ""

@@ -389,10 +389,10 @@ def engine_probe(query, engines, limit, engine_timeout, output):
 @click.argument("query")
 @click.option("--year-min", type=int, default=None, help="Filter: min publication year")
 @click.option("--year-max", type=int, default=None, help="Filter: max publication year")
-@click.option("--limit", type=int, default=50, show_default=True,
+@click.option("--limit", type=click.IntRange(1,1000), default=50, show_default=True,
               help="Max results per engine")
 @click.option("--engine", default="all", show_default=True, callback=_validate_search_engine,
-              help="all / crossref,openalex,arxiv,aminer,pubmed,clinicaltrials,core "
+              help="all / crossref,openalex,arxiv,aminer,pubmed,europepmc,clinicaltrials,core "
                    "(comma-separated; default 'all' includes six public engines; "
                    "'core' = explicit CORE-only)")
 @click.option("--format", "out_format", default="json", show_default=True,
@@ -498,6 +498,12 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                          sort_by=sort_by,
                          source_filter=src_list,
                          enrich_max_age_years=enrich_max_age_years)
+    states = results.get("engine_status", {})
+    if states and not any(state.get("status") in ("ok", "partial") for state in states.values()):
+        # Preserve structured diagnostics, but never report total retrieval
+        # failure as a successful empty search or write an empty bibliography.
+        click.echo(json.dumps(results, indent=2, ensure_ascii=False))
+        raise click.exceptions.Exit(2)
     # [P2-14] Quality filter: flag/filter/off (default flag — annotates, doesn't drop)
     from .quality_filter import apply_quality_filter, summarize_quality
     pre_count = len(results.get("results", []))
@@ -540,18 +546,21 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
 @click.option("--template", default="v32", show_default=True, help="Lit review template version")
 @click.option("-o", "--output", default=None, help="Output markdown file (else stdout)")
 @click.option("--word-count-min", type=int, default=1000, show_default=True,
-              help="Min words extracted to count as full-text (else abstract-only)")
+              help="Descriptive long-text threshold; does not verify full-text completeness")
 @click.option("--with-prisma", is_flag=True,
               help="Prepend a PRISMA 2020 flow diagram (auto-derived from corpus)")
 @click.option("--quiet", is_flag=True, help="Suppress progress output")
 def review(corpus_dir, template, output, word_count_min, with_prisma, quiet):
-    """Synthesize lit review markdown from a corpus directory of PDFs.
+    """Build a source inventory; scientific synthesis requires evidence review.
 
     --with-prisma adds a PRISMA 2020 flow diagram at the top of the output,
     auto-derived from the corpus (identified=PDFs found, after-screening=
     full-text vs abstract-only by word_count_min).
     """
     from .review import synthesize
+    if with_prisma:
+        raise click.BadParameter('PRISMA needs reviewed study identities and eligibility counts; '
+                                 'they cannot be inferred from file counts or text length.', param_hint='--with-prisma')
     corpus_path = Path(corpus_dir)
     if not quiet:
         click.echo(f"[pa] review corpus={corpus_path}", err=True)
@@ -1290,7 +1299,7 @@ def search_saved_run(name, output, quiet):
                    f"year_max={args.get('year_max')}, limit={args.get('limit', 50)}",
                    err=True)
     try:
-        search_cmd(
+        click.get_current_context().invoke(search_cmd,
             query=args['query'],
             year_min=args.get('year_min'),
             year_max=args.get('year_max'),
@@ -1299,7 +1308,7 @@ def search_saved_run(name, output, quiet):
             out_format=args.get('format', 'json'),
             output=output,
             concept_ids=args.get('concepts'),
-            concept_names=args.get('concept'),
+            concept_names=args.get('concept') or (),
             concept_mode=args.get('concept_mode', 'or'),
             enrich_top=args.get('enrich_top', 0),
             enrich_max_age_years=args.get('enrich_max_age_years', 10),
@@ -1617,6 +1626,10 @@ def project_corpus_stats(slug, root_path, top_n, as_json):
             click.echo(f"[corpus-stats] {s}: project not found", err=True)
             continue
         stats = cs.compute_corpus_stats(files["refs"], top_n=top_n)
+        if stats.get('status')=='error':
+            click.echo(json.dumps({'slug':s,**stats},ensure_ascii=False) if as_json else
+                       cs.format_corpus_stats_human(stats),err=not as_json)
+            raise click.exceptions.Exit(1)
         if as_json:
             # Augment with slug for clarity when batch
             result = {"slug": s, **stats}

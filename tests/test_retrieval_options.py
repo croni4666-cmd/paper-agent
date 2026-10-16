@@ -21,6 +21,16 @@ with patch.dict(sys.modules, transport_stubs):
 
 
 class RetrievalOptionsTests(unittest.TestCase):
+    def test_direct_fetch_rejects_unknown_preference_before_network(self):
+        with patch.object(fetch, 'fetch_annas_search') as search, \
+             patch.object(fetch, 'fetch_pmc_doi') as pmc, \
+             patch.object(fetch, 'fetch_unpaywall_doi') as unpaywall:
+            result = fetch.fetch(doi='10.1000/fixture', prefer='unsupported')
+        self.assertEqual(result['error'], 'fetch_invalid_preference')
+        search.assert_not_called()
+        pmc.assert_not_called()
+        unpaywall.assert_not_called()
+
     def test_mcp_schema_matches_supported_sources(self):
         self.assertEqual(mcp_fetch.TOOL_PA_FETCH.inputSchema['properties']['prefer']['enum'],
                          list(fetch.FETCH_PREFERENCES))

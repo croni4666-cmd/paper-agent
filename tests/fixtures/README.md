@@ -1,0 +1,1 @@
+Exported fixture abstracts are synthetic regression examples. Private real-response audits remain outside the repository. Metadata identifiers in the core-schema fixture are transport examples, not a reference set.

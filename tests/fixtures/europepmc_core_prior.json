@@ -1,0 +1,163 @@
+{
+  "version": "6.9",
+  "hitCount": 43,
+  "nextCursorMark": "AoIIQKL9HCg1NTQ5MDUwMA==",
+  "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE_ABS%3Amenopause+AND+TITLE_ABS%3Asleep+AND+TITLE_ABS%3A%22cognitive+behavioral+therapy%22&cursorMark=AoIIQKL9HCg1NTQ5MDUwMA%3D%3D&resultType=core&pageSize=5&format=json",
+  "request": {
+    "queryString": "TITLE_ABS:menopause AND TITLE_ABS:sleep AND TITLE_ABS:\"cognitive behavioral therapy\"",
+    "resultType": "core",
+    "cursorMark": "*",
+    "pageSize": 5,
+    "sort": "",
+    "synonym": false
+  },
+  "resultList": {
+    "result": [
+      {
+        "id": "42439607",
+        "source": "MED",
+        "pmid": "42439607",
+        "doi": "10.1080/13697137.2026.2688265",
+        "title": "Synthetic menopause sleep record 1",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Synthetic A"
+            }
+          ]
+        },
+        "journalInfo": {
+          "journal": {
+            "title": "Synthetic fixture"
+          }
+        },
+        "pubYear": "2026",
+        "abstractText": "Synthetic abstract for transport and field-preservation regression.",
+        "pubTypeList": {
+          "pubType": [
+            "Journal Article"
+          ]
+        },
+        "isOpenAccess": "N",
+        "citedByCount": 0
+      },
+      {
+        "id": "41562717",
+        "source": "MED",
+        "pmid": "41562717",
+        "doi": "10.1097/gco.0000000000001089",
+        "title": "Synthetic menopause sleep record 2",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Synthetic A"
+            }
+          ]
+        },
+        "journalInfo": {
+          "journal": {
+            "title": "Synthetic fixture"
+          }
+        },
+        "pubYear": "2026",
+        "abstractText": "Synthetic abstract for transport and field-preservation regression.",
+        "pubTypeList": {
+          "pubType": [
+            "Review",
+            "Journal Article"
+          ]
+        },
+        "isOpenAccess": "N",
+        "citedByCount": 0
+      },
+      {
+        "id": "42561418",
+        "source": "MED",
+        "pmid": "42561418",
+        "doi": "10.1097/aog.0000000000006388",
+        "title": "Synthetic menopause sleep record 3",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Synthetic A"
+            }
+          ]
+        },
+        "journalInfo": {
+          "journal": {
+            "title": "Synthetic fixture"
+          }
+        },
+        "pubYear": "2026",
+        "abstractText": "Synthetic abstract for transport and field-preservation regression.",
+        "pubTypeList": {
+          "pubType": [
+            "Journal Article"
+          ]
+        },
+        "isOpenAccess": "N",
+        "citedByCount": 0
+      },
+      {
+        "id": "42090940",
+        "source": "MED",
+        "pmid": "42090940",
+        "doi": "10.1016/j.maturitas.2026.108970",
+        "title": "Synthetic menopause sleep record 4",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Synthetic A"
+            }
+          ]
+        },
+        "journalInfo": {
+          "journal": {
+            "title": "Synthetic fixture"
+          }
+        },
+        "pubYear": "2026",
+        "abstractText": "Synthetic abstract for transport and field-preservation regression.",
+        "pubTypeList": {
+          "pubType": [
+            "Meta-Analysis",
+            "Review",
+            "Journal Article"
+          ]
+        },
+        "isOpenAccess": "N",
+        "citedByCount": 0
+      },
+      {
+        "id": "42084929",
+        "source": "MED",
+        "pmid": "42084929",
+        "pmcid": "PMC13603585",
+        "doi": "10.1097/gme.0000000000002779",
+        "title": "Synthetic menopause sleep record 5",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Synthetic A"
+            }
+          ]
+        },
+        "journalInfo": {
+          "journal": {
+            "title": "Synthetic fixture"
+          }
+        },
+        "pubYear": "2026",
+        "abstractText": "Synthetic abstract for transport and field-preservation regression.",
+        "pubTypeList": {
+          "pubType": [
+            "research-article",
+            "Journal Article"
+          ]
+        },
+        "isOpenAccess": "N",
+        "citedByCount": 0
+      }
+    ]
+  }
+}

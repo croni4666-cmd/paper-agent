@@ -8,9 +8,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _pa_root import find_pa_root, get_install_instructions
+from _pa_root import find_pa_python, find_pa_root, get_install_instructions
 
-PYTHON = sys.executable
+PYTHON = find_pa_python()
 
 
 def main() -> int:
@@ -40,19 +40,24 @@ def main() -> int:
         command.extend(["--year-max", str(args.year_max)])
 
     try:
-        result = subprocess.run(command, capture_output=True, text=True,
+        result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8",
                                 timeout=180, cwd=str(root))
     except subprocess.TimeoutExpired:
         print(json.dumps({"error": "search_timeout"}), file=sys.stderr)
         return 2
     if result.returncode:
-        print(result.stderr or result.stdout, end="", file=sys.stderr)
+        if result.stdout:
+            print(result.stdout, end="")
+        if result.stderr:
+            print(result.stderr, end="", file=sys.stderr)
         return result.returncode
     if args.output == "json":
         print(result.stdout, end="")
     else:
         try:
-            for item in json.loads(result.stdout):
+            data = json.loads(result.stdout)
+            items = data.get("results", data.get("papers", [])) if isinstance(data, dict) else data
+            for item in items:
                 print(f"- {item.get('title', '')} ({item.get('year', '')})")
         except json.JSONDecodeError:
             print(result.stdout, end="")

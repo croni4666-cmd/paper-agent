@@ -131,8 +131,11 @@ def find_pa_python(pa_root: Optional[Path] = None) -> str:
     """Return a Python interpreter capable of running paper-agent."""
     # Child CLI output frequently contains titles and author names outside the
     # active Windows code page.  Force UTF-8 for every wrapper subprocess.
-    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
-    os.environ.setdefault("PYTHONUTF8", "1")
+    os.environ["PYTHONIOENCODING"] = "utf-8"
+    os.environ["PYTHONUTF8"] = "1"
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
 
     env_python = os.environ.get("PAPER_AGENT_PYTHON") or _local_runtime().get("python")
     if env_python:

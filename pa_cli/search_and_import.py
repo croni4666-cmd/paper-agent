@@ -105,6 +105,9 @@ def search_to_bibtex(
         query, year_min=year_min, year_max=year_max,
         limit=limit, engine=engine,
     )
+    states=results.get('engine_status',{})
+    if states and not any(s.get('status') in ('ok','partial') for s in states.values()):
+        raise RuntimeError('Search failed; no bibliography or import was written')
     paper_list = results.get("results", [])
     if not paper_list:
         if not quiet:

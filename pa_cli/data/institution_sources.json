@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-16",
+  "provenance": "Curated from official publication pages; ROR/EDIRC are discovery aids, not quality scores.",
+  "sources": [
+    {
+      "id": "nber",
+      "name": "NBER",
+      "domain": "economics",
+      "topics": [
+        "economics",
+        "labor",
+        "health",
+        "macroeconomics"
+      ],
+      "url": "https://www.nber.org/papers",
+      "allowed_hosts": [
+        "www.nber.org",
+        "nber.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "working_paper",
+      "role": "research_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 0,
+      "scope_note": "Publication stage and access rights require per-paper checks"
+    },
+    {
+      "id": "cepr",
+      "name": "CEPR",
+      "domain": "economics",
+      "topics": [
+        "economics",
+        "macroeconomics",
+        "development",
+        "trade"
+      ],
+      "url": "https://cepr.org/publications/discussion-papers",
+      "allowed_hosts": [
+        "cepr.org",
+        "www.cepr.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "discussion_paper",
+      "role": "research_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 1,
+      "scope_note": "Track subsequent versions and journal publication"
+    },
+    {
+      "id": "iza",
+      "name": "IZA@LISER discussion paper network",
+      "domain": "economics",
+      "topics": [
+        "labor",
+        "economics"
+      ],
+      "url": "https://www.iza.org/index.php/publications/dp",
+      "allowed_hosts": [
+        "www.iza.org",
+        "iza.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "discussion_paper",
+      "role": "research_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 2,
+      "scope_note": "Use current series identity; no peer-review assumption"
+    },
+    {
+      "id": "bis",
+      "name": "BIS",
+      "domain": "economics",
+      "topics": [
+        "finance",
+        "macroeconomics"
+      ],
+      "url": "https://www.bis.org/publications/working-paper",
+      "allowed_hosts": [
+        "www.bis.org",
+        "bis.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "working_paper",
+      "role": "research_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 3,
+      "scope_note": "Authors views are not necessarily institutional positions"
+    },
+    {
+      "id": "worldbank",
+      "name": "World Bank",
+      "domain": "economics",
+      "topics": [
+        "development",
+        "economics"
+      ],
+      "url": "https://www.worldbank.org/ext/en/research-publications",
+      "allowed_hosts": [
+        "www.worldbank.org",
+        "worldbank.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "research_report_data",
+      "role": "research_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 4,
+      "scope_note": "Distinguish reports, studies, data, and commentary"
+    },
+    {
+      "id": "imf",
+      "name": "IMF",
+      "domain": "economics",
+      "topics": [
+        "macroeconomics"
+      ],
+      "url": "https://www.imf.org/en/Publications/WP",
+      "allowed_hosts": [
+        "www.imf.org",
+        "imf.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "working_paper",
+      "role": "research_publisher",
+      "enabled": false,
+      "checked_at": "2026-10-15",
+      "order": 5,
+      "scope_note": "Connector not tested; inspect individual papers"
+    },
+    {
+      "id": "who",
+      "name": "WHO",
+      "domain": "medicine",
+      "topics": [
+        "global health",
+        "public health"
+      ],
+      "url": "https://www.who.int/publications",
+      "allowed_hosts": [
+        "www.who.int",
+        "who.int"
+      ],
+      "entry_kind": "listing",
+      "document_type": "guideline_technical_report",
+      "role": "evidence_synthesis_or_guidance",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 6,
+      "scope_note": "Check date, jurisdiction, evidence methods and updates"
+    },
+    {
+      "id": "nice",
+      "name": "NICE",
+      "domain": "medicine",
+      "topics": [
+        "menopause",
+        "sleep"
+      ],
+      "url": "https://www.nice.org.uk/guidance/ng23/chapter/recommendations",
+      "allowed_hosts": [
+        "www.nice.org.uk",
+        "nice.org.uk"
+      ],
+      "entry_kind": "topic_page",
+      "document_type": "guideline_page",
+      "role": "guideline_publisher",
+      "enabled": true,
+      "checked_at": "2026-10-16",
+      "order": 7,
+      "scope_note": "One timeout then successful HTML retrieval. First4000-character excerpt is introductory and omits sleep/CBT terms; inspect target sections before clinical use."
+    },
+    {
+      "id": "cochrane",
+      "name": "Cochrane",
+      "domain": "medicine",
+      "topics": [
+        "evidence synthesis",
+        "public health"
+      ],
+      "url": "https://www.cochrane.org/evidence",
+      "allowed_hosts": [
+        "www.cochrane.org",
+        "cochrane.org"
+      ],
+      "entry_kind": "listing",
+      "document_type": "systematic_review",
+      "role": "evidence_synthesis_or_guidance",
+      "enabled": true,
+      "checked_at": "2026-10-16",
+      "order": 8,
+      "scope_note": "Live-validated evidence-summary discovery page; listing only, not individual study evidence."
+    },
+    {
+      "id": "ahrq",
+      "name": "AHRQ EHC",
+      "domain": "medicine",
+      "topics": [
+        "evidence synthesis",
+        "healthcare"
+      ],
+      "url": "https://effectivehealthcare.ahrq.gov/",
+      "allowed_hosts": [
+        "effectivehealthcare.ahrq.gov",
+        "www.effectivehealthcare.ahrq.gov"
+      ],
+      "entry_kind": "listing",
+      "document_type": "systematic_review_technical_report",
+      "role": "evidence_synthesis_or_guidance",
+      "enabled": false,
+      "checked_at": "2026-10-16",
+      "order": 9,
+      "scope_note": "Automatic fetch temporarily disabled after baseline and diagnostic returned HTTP202 with empty body. Institution remains a research lead; not a quality rejection."
+    },
+    {
+      "id": "nhlbi",
+      "name": "NHLBI NIH",
+      "domain": "medicine",
+      "topics": [
+        "sleep",
+        "cardiopulmonary"
+      ],
+      "url": "https://www.nhlbi.nih.gov/health/insomnia/treatment",
+      "allowed_hosts": [
+        "www.nhlbi.nih.gov",
+        "nhlbi.nih.gov"
+      ],
+      "entry_kind": "topic_page",
+      "document_type": "clinical_information",
+      "role": "clinical_information",
+      "enabled": true,
+      "checked_at": "2026-10-15",
+      "order": 10,
+      "scope_note": "Program descriptions are discovery aids, not efficacy evidence"
+    },
+    {
+      "id": "ams",
+      "name": "Australasian Menopause Society",
+      "domain": "medicine",
+      "topics": [
+        "menopause",
+        "sleep"
+      ],
+      "url": "https://hub.menopause.org.au/Play?pId=d9e361ea-9e11-4f11-81b1-4219222e266f",
+      "allowed_hosts": [
+        "hub.menopause.org.au",
+        "menopause.org.au",
+        "www.menopause.org.au"
+      ],
+      "entry_kind": "topic_page",
+      "document_type": "clinical_information",
+      "role": "professional_society",
+      "enabled": true,
+      "checked_at": "2026-10-16",
+      "order": 20,
+      "scope_note": "Official Hub redirect verified. Public preview only; member-access notice present, full information sheet not inspected."
+    }
+  ]
+}

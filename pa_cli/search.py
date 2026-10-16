@@ -28,6 +28,7 @@ on Chinese queries vs baseline 4 engines.
 """
 
 import json
+import re
 import gzip
 import io
 import logging
@@ -35,6 +36,7 @@ import os
 import sys
 import threading
 import time
+import math
 from pathlib import Path
 from typing import List, Dict, Optional, Any, Callable
 from urllib.parse import quote
@@ -48,6 +50,23 @@ logger = logging.getLogger(__name__)
 
 class EngineRateLimitError(RuntimeError):
     """An upstream engine rejected the request because its rate limit was hit."""
+
+
+def _require_search_json(status: int, data: Any, engine: str,
+                         stage: str) -> Dict[str, Any]:
+    """Keep transport/decode failures distinct from valid zero-hit responses.
+
+    Do not echo upstream payloads or request URLs: either may contain secrets.
+    The caller also validates the engine-specific response structure.
+    """
+    label = f"{engine} {stage}"
+    if status == 429:
+        raise EngineRateLimitError(f"{label} rate limited (HTTP 429)")
+    if status != 200:
+        raise RuntimeError(f"{label} request failed (HTTP status {status})")
+    if not isinstance(data, dict) or data.get("error"):
+        raise RuntimeError(f"{label} returned an invalid or error response")
+    return data
 
 
 def _load_dotenv(path: Optional[Path] = None) -> None:
@@ -227,7 +246,7 @@ def filter_by_source(results: List[Dict], source_filter: List[str] = None) -> Li
     source_filter: list of base engine names like
         ["openalex", "crossref", "arxiv", "aminer", "pubmed", "clinicaltrials", "core"]
         If None or empty, no filter (all results returned).
-    Matching: a result matches if its `source` field starts with any filter
+    Matching: a result matches if its `source` or any `found_by` entry starts with a filter
         entry. So "openalex" matches both "openalex" and "openalex_title"
         (the [P1-15] fallback). "crossref" matches "crossref" and "crossref_title".
 
@@ -239,7 +258,8 @@ def filter_by_source(results: List[Dict], source_filter: List[str] = None) -> Li
     if not sf:
         return list(results)
     return [r for r in results if any(
-        (r.get("source") or "").lower().startswith(prefix) for prefix in sf
+        str(origin).lower().startswith(prefix)
+        for origin in [r.get('source') or '', *(r.get('found_by') or [])] for prefix in sf
     )]
 
 
@@ -255,11 +275,11 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
            f"container-title,published-print,published-online,published,issued,is-referenced-by-count,references-count,type")
     s, data = http_get_json(url)
-    if s != 200 or not isinstance(data, dict):
-        raise RuntimeError(f"Crossref request failed with HTTP status {s}")
-    if data.get("error"):
-        raise RuntimeError(f"Crossref response error: {data['error']}")
-    items = (data.get("message") or {}).get("items", [])
+    data = _require_search_json(s, data, 'Crossref', 'search')
+    message = data.get('message')
+    items = message.get('items') if isinstance(message, dict) else None
+    if not isinstance(items, list) or any(not isinstance(it,dict) for it in items):
+        raise RuntimeError('Crossref search response is missing a valid items list')
     return [_normalize_crossref(it) for it in items]
 
 
@@ -304,9 +324,10 @@ def search_openalex(query: str, year_min: int = None, year_max: int = None,
     if api_key:
         url += f"&api_key={api_key}"
     s, data = http_get_json(url)
-    if s != 200:
-        return []
-    results = data.get("results") or []
+    data = _require_search_json(s, data, "OpenAlex", "search")
+    results = data.get("results")
+    if not isinstance(results, list):
+        raise RuntimeError("OpenAlex search response is missing a results list")
     return [_normalize_openalex(r) for r in results]
 
 
@@ -317,6 +338,20 @@ def _normalize_openalex(r: dict) -> dict:
     pub_date = r.get("publication_date", "")
     year = int(pub_date[:4]) if pub_date and pub_date[:4].isdigit() else None
     oa = r.get("open_access") or {}
+    # OpenAlex supplies word positions rather than a plaintext abstract.
+    inverted = r.get('abstract_inverted_index')
+    positions = {}
+    if isinstance(inverted, dict):
+        for word, offsets in inverted.items():
+            if not isinstance(word, str) or not isinstance(offsets, list):
+                continue
+            for offset in offsets:
+                if type(offset) is int and 0 <= offset < 100000:
+                    positions.setdefault(offset, word)
+    abstract = ' '.join(positions[p] for p in sorted(positions))
+    ids = r.get('ids') if isinstance(r.get('ids'), dict) else {}
+    raw_pmid = str(ids.get('pmid') or '')
+    pmid_match = re.fullmatch(r'(?:https?://pubmed\.ncbi\.nlm\.nih\.gov/)?(\d+)/?', raw_pmid)
     return {
         "doi": (r.get("doi") or "").replace("https://doi.org/", ""),
         "title": r.get("title", "") or r.get("display_name", ""),
@@ -329,6 +364,8 @@ def _normalize_openalex(r: dict) -> dict:
         "oa_url": oa.get("oa_url"),
         "source": "openalex",
         "type": r.get("type", ""),
+        "abstract": abstract,
+        "pmid": pmid_match.group(1) if pmid_match else '',
     }
 
 
@@ -367,6 +404,7 @@ def search_arxiv(query: str, year_min: int = None, year_max: int = None,
                 "cited_by_count": 0,  # arXiv doesn't track citations
                 "source": "arxiv",
                 "type": "preprint",
+                "abstract": getattr(r, 'summary', '') or '',
             })
     except Exception as exc:
         raise RuntimeError(f"arXiv search failed: {exc}") from exc
@@ -408,15 +446,18 @@ def _search_core_unavailable(*args, **kwargs):
 # Adds best-effort abstracts and MeSH terms through batched EFetch XML.
 # 2 calls per search: esearch (PMID list) + esummary (metadata). 1s polite sleep between.
 _PUBMED_LAST_CALL_TS = [0.0]  # module-level throttle
+_PUBMED_THROTTLE_LOCK = threading.Lock()
 
 def _pubmed_throttle(min_interval: float = 0.4) -> None:
     """NCBI etiquette: 3 RPS without API key, 10 RPS with key.
     Default 0.4s = 2.5 RPS = safely under both limits and polite to NCBI.
     """
-    elapsed = time.time() - _PUBMED_LAST_CALL_TS[0]
-    if elapsed < min_interval:
-        time.sleep(min_interval - elapsed)
-    _PUBMED_LAST_CALL_TS[0] = time.time()
+    with _PUBMED_THROTTLE_LOCK:
+        elapsed = time.monotonic() - _PUBMED_LAST_CALL_TS[0]
+        while elapsed < min_interval:
+            time.sleep(min_interval - elapsed)
+            elapsed = time.monotonic() - _PUBMED_LAST_CALL_TS[0]
+        _PUBMED_LAST_CALL_TS[0] = time.monotonic()
 
 
 def _parse_pubmed_details(xml_bytes: bytes) -> Dict[str, Dict[str, Any]]:
@@ -471,7 +512,8 @@ def _fetch_pubmed_details(pmids: List[str], tool: str, email: str,
     return details
 
 def search_pubmed(query: str, year_min: int = None, year_max: int = None,
-                  limit: int = 50) -> List[Dict]:
+                  limit: int = 50, sort: Optional[str] = None,
+                  diagnostics: Optional[Dict[str, Any]] = None) -> List[Dict]:
     """PubMed (NCBI E-utilities): ~36M biomedical/biomedical-adjacent citations.
 
     Free public API, no key required. To raise rate limit from 3 to 10 RPS,
@@ -481,6 +523,8 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     authors (max 5 + et al.), DOI (if available), publication types.
     Abstract and MeSH enrichment is best effort and never blocks search results.
     """
+    if sort not in (None,'relevance','pub_date'):
+        raise ValueError('PubMed sort must be relevance or pub_date')
     # NCBI E-utilities requires email + tool parameters per their etiquette
     tool = "paper-agent"
     email = os.environ.get("NCBI_EMAIL", "paper-agent@example.com")
@@ -501,17 +545,34 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     )
     if api_key:
         esearch_url += f"&api_key={quote(api_key)}"
+    if sort:
+        esearch_url += f"&sort={sort}"
 
     s, data = http_get_json(esearch_url, timeout=30)
-    if s != 200 or not data:
-        return []
-    pmids = (data.get("esearchresult") or {}).get("idlist") or []
+    data = _require_search_json(s, data, "PubMed", "ESearch")
+    search_result = data.get("esearchresult")
+    if not isinstance(search_result, dict) or search_result.get("error"):
+        raise RuntimeError("PubMed ESearch returned an invalid result")
+    pmids = search_result.get("idlist")
+    if not isinstance(pmids, list):
+        raise RuntimeError("PubMed ESearch response is missing an id list")
+    if diagnostics is not None:
+        raw_count = str(search_result.get('count',''))
+        total = int(raw_count) if raw_count.isdigit() else None
+        diagnostics.update({
+            'total_matches': total, 'returned_ids': len(pmids),
+            'requested_limit': limit, 'effective_limit': min(limit,200),
+            'truncated': total > len(pmids) if total is not None else None,
+            'query_translation': search_result.get('querytranslation'),
+            'warnings': search_result.get('warninglist',{}),
+        })
     if not pmids:
         return []
 
     # 鈹€鈹€ 2. esummary: get metadata for PMIDs 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
     # NCBI limits to 200 IDs per esummary call. If we got more, chunk.
     results: List[Dict] = []
+    summary_errors = []
     for i in range(0, len(pmids), 100):
         chunk = pmids[i:i + 100]
         _pubmed_throttle()
@@ -525,15 +586,35 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
             esummary_url += f"&api_key={quote(api_key)}"
 
         s2, data2 = http_get_json(esummary_url, timeout=30)
-        if s2 != 200 or not data2:
+        try:
+            data2 = _require_search_json(s2, data2, "PubMed", "ESummary")
+        except RuntimeError:
+            if not results:raise
+            summary_errors.append({'error':'pubmed_summary_chunk_failed'})
             continue
-        result_root = data2.get("result") or {}
-        uids = result_root.get("uids") or []
+        result_root = data2.get("result")
+        if not isinstance(result_root, dict):
+            raise RuntimeError("PubMed ESummary returned an invalid result")
+        uids = result_root.get("uids")
+        if not isinstance(uids, list) or not uids:
+            raise RuntimeError("PubMed ESummary response is missing requested records")
+        received=set()
         for uid in uids:
+            if str(uid) not in chunk:continue
             r = result_root.get(uid) or {}
             if not r or r.get("error"):
                 continue
-            results.append(_normalize_pubmed(r))
+            normalized=_normalize_pubmed(r)
+            if normalized.get('pmid') != str(uid):continue
+            results.append(normalized)
+            received.add(str(uid))
+        if any(str(uid) not in received for uid in chunk):
+            summary_errors.append({'error':'pubmed_summary_missing_records'})
+
+    # ESummary supplies metadata, not a ranking contract. Restore ESearch's
+    # identifier order before callers apply stable sorts or result cutoffs.
+    rank = {str(pmid): i for i, pmid in enumerate(pmids)}
+    results.sort(key=lambda paper: rank.get(str(paper.get('pmid')), len(rank)))
 
     # 3. EFetch: add abstracts and controlled MeSH terms in batches.
     # An EFetch outage must not discard usable ESummary metadata.
@@ -562,7 +643,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
             if r.get("year") and ymin <= int(r["year"]) <= ymax
         ]
 
-    return results
+    return results + summary_errors
 
 
 def _normalize_pubmed(r: dict) -> dict:
@@ -662,10 +743,10 @@ def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None
     _pubmed_throttle(0.4)  # ~2.5 RPS, polite to CT.gov
 
     s, data = http_get_json(url, timeout=30)
-    if s != 200 or not data:
-        return []
-
-    studies = data.get("studies") or []
+    data = _require_search_json(s, data, "ClinicalTrials.gov", "search")
+    studies = data.get("studies")
+    if not isinstance(studies, list):
+        raise RuntimeError("ClinicalTrials.gov search response is missing a studies list")
     results: List[Dict] = []
     for study in studies:
         norm = _normalize_clinicaltrial(study)
@@ -775,6 +856,9 @@ except ImportError:
 
 DEFAULT_ENGINE_TIMEOUT_SECONDS = 30.0
 
+# Explicit opt-in; keep the historical `all` engine set unchanged.
+from .europepmc import search_europepmc
+
 
 def _run_engine_with_timeout(callback: Callable[[], List[Dict]], timeout: float) -> List[Dict]:
     """Run one engine without allowing a stalled network call to block others."""
@@ -807,7 +891,9 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                source_filter: List[str] = None,
                enrich_max_age_years: int = 10,
                aminer_mode: str = "auto",
-               engine_timeout: float = DEFAULT_ENGINE_TIMEOUT_SECONDS) -> Dict[str, Any]:
+               engine_timeout: float = DEFAULT_ENGINE_TIMEOUT_SECONDS,
+               pubmed_sort: Optional[str] = None,
+               pubmed_diagnostics: bool = False) -> Dict[str, Any]:
     """Run search across specified engines; returns deduped unified results.
 
     concepts_filter: OpenAlex `concepts.id:...` filter string (built by
@@ -830,6 +916,17 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
     engine_timeout: maximum seconds for one engine before its result is
              marked as an error and the remaining engines continue.
     """
+    if not isinstance(query,str) or not query.strip():
+        raise ValueError('A nonempty search query is required')
+    if type(limit) is not int or not 1<=limit<=1000:
+        raise ValueError('Search limit must be an integer from 1 to 1000')
+    if (isinstance(engine_timeout,bool) or not isinstance(engine_timeout,(int,float))
+            or not math.isfinite(engine_timeout) or engine_timeout<=0):
+        raise ValueError('Engine timeout must be positive and finite')
+    if any(y is not None and (type(y) is not int or not 1<=y<=9999) for y in (year_min,year_max)):
+        raise ValueError('Publication years must be integers from 1 to 9999')
+    if year_min and year_max and year_min>year_max:
+        raise ValueError('Publication year range is reversed')
     engines = (["crossref", "openalex", "arxiv", "aminer", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     # v3.9.8.2 (2026-07-15): CORE is no longer in the default "all" list.
@@ -851,6 +948,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "arxiv": search_arxiv,
         # v3.9.11.8 (2026-08-09): PubMed medical engine, no auth required.
         "pubmed": search_pubmed,
+        "europepmc": search_europepmc,
         # v3.9.12.0 (2026-08-10): ClinicalTrials.gov, no auth, JSON API.
         # Note: returns trial registry records (NOT papers). Different
         # content type from PubMed/PEDro. Will appear as source='clinicaltrials'.
@@ -875,6 +973,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                                   "message": f"Unsupported search engine: {eng}"}
             continue
         try:
+            search_details: Dict[str, Any] = {}
             # Pass concepts_filter to OpenAlex; other engines ignore extra args.
             if eng == "openalex" and concepts_filter:
                 invoke = lambda search_func=search_openalex: search_func(
@@ -884,12 +983,33 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
                 invoke = lambda search_func=funcs[eng]: search_func(
                     query, year_min, year_max, limit, mode=aminer_mode
                 )
+            elif eng == "pubmed" and pubmed_diagnostics:
+                invoke = lambda search_func=search_pubmed, details=search_details: search_func(
+                    query, year_min, year_max, limit, sort=pubmed_sort, diagnostics=details
+                )
+            elif eng == "pubmed" and pubmed_sort is not None:
+                invoke = lambda search_func=search_pubmed: search_func(
+                    query, year_min, year_max, limit, sort=pubmed_sort
+                )
             else:
                 invoke = lambda search_func=funcs[eng]: search_func(
                     query, year_min, year_max, limit
                 )
-            by_engine[eng] = _run_engine_with_timeout(invoke, engine_timeout)
-            engine_status[eng] = {"status": "ok", "count": len(by_engine[eng])}
+            rows = _run_engine_with_timeout(invoke, engine_timeout)
+            if not isinstance(rows, list) or not all(isinstance(p, dict) for p in rows):
+                raise ValueError('Provider returned invalid result rows')
+            errors = [p for p in rows if 'error' in p]
+            valid = [p for p in rows if 'error' not in p]
+            if any(not (p.get('doi') or p.get('arxiv_id') or p.get('pmid') or p.get('nct_id') or p.get('title')) for p in valid):
+                raise ValueError('Provider returned record without identity')
+            by_engine[eng] = valid
+            engine_status[eng] = {'status': 'partial' if errors and valid else 'error' if errors else 'ok',
+                                  'count': len(valid)}
+            if errors:
+                engine_status[eng]['errors'] = [{'error': str(p.get('error'))[:100]} for p in errors]
+                engine_status[eng]['message'] = 'Provider reported incomplete or failed retrieval; see error codes'
+            if eng == 'pubmed' and pubmed_diagnostics:
+                engine_status[eng]['search_details'] = search_details
         except EngineRateLimitError as e:
             by_engine[eng] = []
             engine_status[eng] = {"status": "rate_limited", "count": 0,
@@ -899,27 +1019,18 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
             engine_status[eng] = {"status": "error", "count": 0,
                                   "message": str(e)[:200]}
 
-    # Dedup by DOI (or arXiv ID fallback)
-    seen = {}
-    for eng, papers in by_engine.items():
-        for p in papers:
-            if "error" in p:
-                continue
-            key = p.get("doi") or p.get("arxiv_id") or p.get("title", "")[:60]
-            if not key:
-                continue
-            if key not in seen:
-                seen[key] = dict(p)
-                seen[key]["found_by"] = [eng]
-            else:
-                if eng not in seen[key]["found_by"]:
-                    seen[key]["found_by"].append(eng)
-                # Merge citation count + abstract + enrichment fields (prefer non-empty)
-                for c in ("cited_by_count", "is_oa", "oa_url", "tldr", "abstract",
-                          "venue", "authors", "influential_cite_count", "reference_count",
-                          "doi", "arxiv_id"):
-                    if not seen[key].get(c) and p.get(c):
-                        seen[key][c] = p[c]
+    from .record_identity import deduplicate_records
+    rows=[]
+    for eng,papers in by_engine.items():
+        for paper in papers:
+            if 'error' not in paper:
+                # Bind engine provenance before publication identity merging.
+                row=dict(paper)
+                row['found_by']=[eng]
+                if eng=='clinicaltrials':row['source']='clinicaltrials'
+                rows.append(row)
+    merged=deduplicate_records(rows)
+    seen={i:paper for i,paper in enumerate(merged)}
 
     # Use a provider summary as an abstract only when no abstract is present.
     for r in seen.values():

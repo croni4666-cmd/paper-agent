@@ -1,18 +1,30 @@
 """Bounded PDF parsing shared by fresh output and legacy cache reads."""
 from pathlib import Path
+import threading
+import time
 from .fetch_deadline import run_fetch
 
 VALIDATION_SECONDS = 10
 VALIDATION_MEMORY_MB = 512
 VALIDATION_POLICY = 'pypdf-strict-pages-v1'
+_PARSER_SLOTS = threading.BoundedSemaphore(2)
 
 
 from .fetch_trace import traced
 
 @traced("pdf_validation")
 def validate_pdf(path: Path) -> dict:
-    result = run_fetch({'_operation': 'validate_pdf', 'path': str(Path(path).resolve())},
-                       VALIDATION_SECONDS, _memory_mb=VALIDATION_MEMORY_MB)
+    started = time.monotonic()
+    if not _PARSER_SLOTS.acquire(timeout=VALIDATION_SECONDS):
+        return {'valid': False}
+    try:
+        remaining = VALIDATION_SECONDS - (time.monotonic() - started)
+        if remaining <= 0:
+            return {'valid': False}
+        result = run_fetch({'_operation': 'validate_pdf', 'path': str(Path(path).resolve())},
+                           remaining, _memory_mb=VALIDATION_MEMORY_MB)
+    finally:
+        _PARSER_SLOTS.release()
     if result.get('valid') is not True:
         return {'valid': False}
     return result

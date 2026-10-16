@@ -32,7 +32,8 @@ from .scaffold import parse_bibtex, load_bibtex
 
 # Match [@key] or [@key:page] or [@key, p. 12] etc.
 # Key chars: letters, digits, underscore, hyphen, dot, colon (common in author-year keys)
-_CITE_RE = re.compile(r"\[@([\w\-:.]+)(?:\s*[,;][^\]]*)?\]")
+_CITE_RE = re.compile(r"\[[^\]\n]*\]")
+_KEY_RE = re.compile(r"(?<![\w@])@([\w\-:.]+)")
 
 
 def extract_cite_keys(skeleton_text: str) -> List[Tuple[str, int]]:
@@ -44,8 +45,10 @@ def extract_cite_keys(skeleton_text: str) -> List[Tuple[str, int]]:
     """
     out = []
     for lineno, line in enumerate(skeleton_text.splitlines(), start=1):
+        seen=set()
         for m in _CITE_RE.finditer(line):
-            out.append((m.group(1), lineno))
+            for key in _KEY_RE.findall(m.group(0)):
+                if key not in seen:out.append((key,lineno));seen.add(key)
     return out
 
 
@@ -143,6 +146,7 @@ def format_report(
     result: Dict[str, List[Dict]],
     skeleton_path: Path,
     bib_path: Path,
+    *, placeholders=None, bib_keys=None,
 ) -> str:
     """Human-readable report."""
     lines = []
@@ -150,9 +154,9 @@ def format_report(
     lines.append(f"")
     lines.append(f"- Skeleton: {skeleton_path}")
     lines.append(f"- Bibtex:   {bib_path}")
-    lines.append(f"- Placeholders: {sum(len(v) for v in result.values() if 'line' in (v[0] if v else {}))} occurrences "
+    lines.append(f"- Placeholders: {len(placeholders) if placeholders is not None else 'unknown'} occurrences "
                  f"({len({k['key'] for k in (result['missing'] + result['typoed'])})} unique missing/typoed)")
-    lines.append(f"- Bib keys: {len(result['orphan']) + len({k['key'] for k in (result['missing'] + result['typoed'])})}")
+    lines.append(f"- Bib keys: {len(bib_keys) if bib_keys is not None else 'unknown'}")
     lines.append(f"")
 
     if result['missing']:
@@ -213,6 +217,6 @@ def run_cite_check(
             'orphan': result['orphan'],
         }, indent=2, ensure_ascii=False)
     else:
-        report = format_report(result, skeleton_path, bib_path)
+        report = format_report(result, skeleton_path, bib_path,placeholders=placeholders,bib_keys=bib_keys)
 
     return result, report

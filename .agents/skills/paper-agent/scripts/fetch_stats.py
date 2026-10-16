@@ -1,13 +1,13 @@
 import json, subprocess, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _pa_root import find_pa_root, get_install_instructions
+from _pa_root import find_pa_python, find_pa_root, get_install_instructions
 def main():
     root=find_pa_root()
     if not root:
         print(json.dumps({"error":"pa_cli_not_found","hint":get_install_instructions().strip()}),file=sys.stderr); return 4
     try:
-        result=subprocess.run([sys.executable,"-m","pa_cli.cli","fetch-stats","--json"],capture_output=True,text=True,timeout=30,cwd=str(root))
+        result=subprocess.run([find_pa_python(root),"-m","pa_cli.cli","fetch-stats","--json"],capture_output=True,text=True,encoding="utf-8",timeout=30,cwd=str(root))
     except subprocess.TimeoutExpired:
         print(json.dumps({"error":"fetch_stats_timeout"}),file=sys.stderr); return 2
     if result.returncode:

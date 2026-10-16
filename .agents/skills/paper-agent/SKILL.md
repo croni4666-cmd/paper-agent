@@ -17,8 +17,8 @@ description: |
   lookup, non-academic research, or PDF reading (use a different
   skill for that).
 metadata:
-  version: 3.9.29.0
-  pa_cli_version: 3.9.29.0
+  version: 3.9.30
+  pa_cli_version: 3.9.30
   author: paper-agent team (croni4666-cmd)
   license: AGPL-3.0-only WITH No-AI-Training-1.0
   homepage: https://github.com/croni4666-cmd/paper-agent
@@ -31,7 +31,7 @@ allowed-tools:
 # paper-agent — Academic paper search, fetch, and lit-review Skill
 
 A Codex Skill wrapper around the `paper-agent` Python CLI/MCP. Provides
-8 pre-vetted wrapper scripts in `scripts/` that Codex can invoke
+wrapper scripts in `scripts/` that Codex can invoke
 deterministically. The full `pa` CLI (30+ subcommands) is also
 available via `python -m pa_cli.cli <command>` if needed.
 
@@ -44,7 +44,7 @@ available via `python -m pa_cli.cli <command>` if needed.
 | "search for papers about X" / "find me papers on Y" | `scripts/search.py` |
 | "fetch the PDF for 10.xxxx/xxx" / "download paper DOI 10.xxxx" | `scripts/fetch.py` |
 | "fetch all PDFs in this BibTeX" / "batch download refs.bib" | `scripts/fetch_batch.py` |
-| "build a lit review from refs.bib" / "synthesize a literature review" | `scripts/review.py` |
+| "prepare a review from a corpus" | `scripts/review.py` (deterministic draft; inspect evidence and synthesize separately) |
 | "cluster my corpus by topic" / "group papers by theme" | `scripts/review.py --topics` |
 | "show my API key status" / "check OpenAlex / CORE / Unpaywall settings" | `scripts/keys.py` |
 | "how many papers in cache" / "show cache stats" / "clean old PDFs" | `scripts/cache.py` |
@@ -57,7 +57,30 @@ available via `python -m pa_cli.cli <command>` if needed.
 - Reading a PDF (use a PDF reader skill)
 - Non-academic queries (news, weather, etc.)
 
+## Optional Europe PMC source
+
+Use `--engine europepmc` for public medical searches. Structured research accepts
+`--engine europepmc --expansion none --strategy single`. Defaults are unchanged.
+See `references/europepmc.md` for source syntax, OA limits and provenance.
+Review output is an inventory; scientific support/refutation and conflict appraisal remain separate.
+
 ## Quick start
+
+### Complex biomedical propositions and official sources
+
+For concept-block query expansion, local MeSH lookup, observable stopping
+budgets, or domain-routed institutional pages, read
+[`references/concept-search.md`](references/concept-search.md).
+Use `scripts/research_search.py` with an explicit question profile; it preserves
+the original question and separates paper candidates from official page text.
+Use `scripts/terminology.py` to download/import/lookup official MeSH data.
+This opt-in workflow defaults to a single original-term query (32 results);
+MeSH expansion and multi-query strategies are explicit sensitivity options.
+The same reference documents optional review-reference discovery, exact-query
+caching and an experimental adaptive slot budget. Reference discovery has an
+additional budget; cache hits are historical responses, not new evidence.
+It does not replace source appraisal or automatically
+validate scientific propositions. Existing `search.py` behavior is unchanged.
 
 ```bash
 # Search
@@ -69,8 +92,8 @@ python scripts/fetch.py 10.1038/nature12373 --prefer pmc-pdf
 # Batch fetch from BibTeX
 python scripts/fetch_batch.py refs.bib --output-dir ./pdfs/
 
-# Lit review synthesis
-python scripts/review.py refs.bib --output lit_review.md --topic "数字普惠金融"
+# Review draft from downloaded papers (not a BibTeX file)
+python scripts/review.py ./pdfs/ --output lit_review.md
 
 # Citations (forward + backward)
 python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
@@ -78,7 +101,9 @@ python scripts/citations.py 10.1038/nature12373 --direction both --limit 50
 
 ## Installation
 
-The skill's 8 wrapper scripts depend on the **paper-agent Python package** (pa_cli) — the actual CLI that does the work. The skill cannot function without pa_cli installed. **v3.9.23.1 added auto-install** to handle the most common setup error ("No module named 'pa_cli'").
+The wrapper scripts depend on the **paper-agent Python package** (`pa_cli`). For an installed skill outside its source checkout, put absolute `root` and `python` paths in `runtime.local.json` beside this file, or set `PAPER_AGENT_ROOT` and `PAPER_AGENT_PYTHON` (environment takes precedence). Use a persistent checkout and virtual environment, not a temporary testing directory. Keep the local configuration out of Git and distributable packages.
+
+Every wrapper uses that selected interpreter for backend commands, even when the host Python lacks dependencies. Without an explicit interpreter, discovery checks `.venv-codex` and `.venv` under the backend root before falling back to the host.
 
 ### Recommended: run bootstrap once
 
@@ -87,14 +112,15 @@ python <skill-dir>/scripts/bootstrap.py
 ```
 
 This will:
-1. Check if pa_cli is importable (exit 0 → done)
-2. If not, auto-detect the paper-agent repo at common locations
-3. Run `pip install -e <repo>` to install in editable mode
-4. Verify the install succeeded
+1. Locate the requested or configured backend directory.
+2. Check `pa_cli.cli --help` in the selected runtime.
+3. If needed, install the backend in that same runtime and recheck.
+
+Use `--check` for a read-only check; it never installs dependencies. A successful check confirms the CLI starts, not that all optional features or external services work.
 
 If the repo is not in a common location, pass `--repo <path>`:
 ```bash
-python <skill-dir>/scripts/bootstrap.py --repo G:\minimax - workspace\Paper agent
+python <skill-dir>/scripts/bootstrap.py --repo "G:\path with spaces\paper-agent"
 ```
 
 ### Manual install
@@ -114,9 +140,9 @@ $env:PAPER_AGENT_ROOT = "G:\path\to\paper-agent"  # Windows PowerShell
 
 ### How `find_pa_root()` discovers pa_cli
 
-The 8 wrapper scripts share a `_pa_root.py` helper that tries 4 strategies in order:
+The wrappers share a `_pa_root.py` helper that tries these locations in order:
 
-1. `$PAPER_AGENT_ROOT` env var (explicit override)
+1. `$PAPER_AGENT_ROOT` env var, otherwise the `root` in `runtime.local.json`
 2. `import pa_cli` (works if pip-installed system-wide)
 3. Common paths under `~/minimax - workspace/Paper agent`, `~/code/paper-agent`, `cwd/`, etc.
 4. `pa` CLI on PATH (traces back to site-packages)
@@ -155,8 +181,8 @@ python scripts/search.py QUERY [options]
   --output FORMAT [json|markdown]    default=json
 ```
 
-Returns JSON list of papers with `title / authors / year / venue / doi /
-abstract / tldr / open_access / cites / engine`. `all` runs all 8
+Returns a JSON envelope whose `results` field contains paper records with `title / authors / year / venue / doi /
+abstract / tldr / open_access / cites / engine`. `all` runs the 6 public
 engines in parallel and dedupes by DOI. AMiner is best for Chinese
 papers; PubMed for biomedical; arXiv for preprints; ClinicalTrials
 returns trial registry records.
@@ -195,21 +221,26 @@ Reads a BibTeX file, extracts DOIs, fetches each PDF in sequence. Writes
 PDFs to `<output-dir>/<sanitized-cite-key>.pdf`. Generates a JSON
 report with success/failure counts and per-paper details.
 
-### `scripts/review.py` — Literature review synthesis
+### `scripts/review.py` — Review draft and topic clusters
 
 ```bash
 python scripts/review.py CORPUS [options]
-  --output FILE                     default=lit_review.md
-  --topic "topic name"              focus synthesis on a theme
-  --max-papers N                    default=50
+  --output FILE                     default=lit_review.md (topics.json with --topics)
+  --word-count-min N                default=1000; extraction classification only
   --topics                          cluster corpus by topic instead
-  --top-k-clusters N                default=5
 ```
 
-`CORPUS` is a directory containing PDFs or a BibTeX file. Synthesizes
-a Markdown lit review with: introduction, theme-based sections, paper
-summaries, gap analysis, and references. The `--topics` flag does
-clustering instead (TF-IDF + KMeans) and writes cluster summaries.
+`CORPUS` is a directory of PDF, Markdown or text papers, not a BibTeX file.
+The backend generates a deterministic Markdown draft; it does not call an LLM
+or establish factual correctness. Inspect original evidence and write the
+narrative synthesis separately. The extraction word-count threshold does not
+prove full-text completeness or study quality. Download BibTeX entries with
+`fetch_batch.py` first. `--topic`, `--max-papers`, `--model` and
+`--top-k-clusters` were previously advertised but are unsupported and now
+return explicit errors. Clustering writes JSON and needs `scikit-learn` for
+its lightweight fallback; cluster count is selected by the backend.
+
+Input and output paths resolve relative to the caller's directory, not the backend checkout.
 
 ### `scripts/citations.py` — Walk citation graph
 
@@ -220,8 +251,11 @@ python scripts/citations.py DOI [options]
   --output FILE                     default=None (stdout)
 ```
 
-Uses OpenAlex API (no key required). Forward = papers that THIS paper
-cites; backward = papers that cite THIS paper.
+Uses the backend OpenAlex library (there is no `pa citations` CLI command).
+Forward = papers that cite this paper; backward = this paper's references.
+`both` retains separate directional results under `walks`; the combined
+`results` list can contain duplicates across directions. Inspect backend
+warnings and truncation flags; a returned subset is not a complete citation graph.
 
 ### `scripts/keys.py` — API key management
 
@@ -229,12 +263,12 @@ cites; backward = papers that cite THIS paper.
 python scripts/keys.py [command]
   list                              show all keys + status
   check SERVICE_ID                  live-probe a single service
-  add SERVICE_ID KEY                add a new key
   audit                             show expiry warnings
 ```
 
-Reads from `.env` + `~/.paper-agent/keys.json`. Never logs the actual
-key value (only last 4 chars).
+Uses the backend key registry. `audit` returns its text report in a JSON
+`audit_text` field. `check` is a live probe that can update check timestamps
+and alert files; it is not a read-only status check. Use `list` for status.
 
 ### `scripts/cache.py` — Cache management
 
@@ -242,8 +276,7 @@ key value (only last 4 chars).
 python scripts/cache.py [command]
   stats                             show cache size + oldest entry
   clean --older-than-days N         delete old PDFs
-  list                              list all cached papers
-  clear                             remove all (with confirmation)
+  clear --confirm                   remove all cached papers (explicitly destructive)
 ```
 
 Cache lives at `~/.paper-agent/cache/`. Stores PDFs + metadata.
@@ -254,8 +287,10 @@ Cache lives at `~/.paper-agent/cache/`. Stores PDFs + metadata.
 python scripts/version.py
 ```
 
-Prints paper-agent version, Python version, key dep status
-(playwright, requests, etc.). Useful for first-time setup validation.
+Reports the skill version separately from the configured backend version and
+interpreter. It tests Chromium by actually generating an in-memory PDF.
+`jats_to_pdf_available: false` may mean a missing browser or host execution
+restrictions; inspect `browser_error`. Backend readiness is reported separately.
 
 ## Common workflows
 
@@ -266,7 +301,7 @@ Prints paper-agent version, Python version, key dep status
 python scripts/search.py "long-term care insurance" --engine all --limit 30 > results.json
 
 # 2. Extract DOIs and fetch
-jq -r '.[].doi' results.json | head -10 | xargs -I {} python scripts/fetch.py {}
+jq -r '.results[].doi // empty' results.json | head -10 | xargs -I {} python scripts/fetch.py {}
 
 # 3. Push to Zotero (uses pa zotero-push directly)
 python -m pa_cli.cli zotero push --corpus results.json
@@ -279,7 +314,7 @@ python -m pa_cli.cli zotero push --corpus results.json
 python scripts/fetch_batch.py refs.bib --output-dir ./pdfs/ --report fetch_report.json
 
 # 2. Synthesize lit review
-python scripts/review.py ./pdfs/ --output lit_review.md --topic "long-term care"
+python scripts/review.py ./pdfs/ --output lit_review.md
 ```
 
 ### 3. PRISMA flow diagram (for systematic reviews)
@@ -333,10 +368,10 @@ python -m pa_cli.cli sample-pool add --qid q001 --relevance 1
 
 ## Notes for Codex
 
-- All scripts return **JSON to stdout** on success and **error JSON
-  to stderr** on failure. Parse both.
+- Wrappers normally return JSON; search's Markdown mode is plain text,
+  and backend/parser errors may also be text. Check exit status and both streams.
 - All scripts support `--help`.
-- All scripts are idempotent (cache-aware; safe to re-run).
-- This skill is read-only on the agent's project workspace unless
-  the user explicitly asks for fetch/review which write files.
+- Output-producing scripts can overwrite their requested output files; preserve existing research artifacts or choose a new output path.
+- Fetch/review/citation output writes files; key probes can update state and
+  cache cleaning deletes cache entries. Keep mutations within the user's request.
 Fetch statistics: run scripts/fetch_stats.py when asked which PDF sources work best locally. It reads local outcomes only and does not fetch papers.

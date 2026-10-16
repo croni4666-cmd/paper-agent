@@ -18,7 +18,10 @@ def main():
     fetch_deadline._IN_FETCH_WORKER = True
     with open(os.devnull, "w") as sink, contextlib.redirect_stdout(sink):
         operation = request.pop("_operation", "single")
-        if operation == "validate_pdf":
+        if operation == "browser_status":
+            from .doctor import browser_status_worker
+            result = browser_status_worker(**request)
+        elif operation == "validate_pdf":
             from .pdf_validation import validation_worker
             result = validation_worker(**request)
         elif operation == "batch_entry":

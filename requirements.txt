@@ -10,7 +10,7 @@ arxiv>=2.1,<5
 numpy>=1.24
 
 # HTTP client (used by pa_cli/fetch.py, search.py)
-requests>=2.32,<2.34
+requests>=2.34.2,<2.35
 
 # Response caching (used by pa_cli/keys.py, search.py for S2 throttle+retry)
 requests-cache>=1.0

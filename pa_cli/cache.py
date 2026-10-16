@@ -173,7 +173,7 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
     """Persist PDF + sidecar to cache. Returns the entry dict on success.
 
     Publishes a new generation and atomically switches the index (newer ts + sha256).
-    Checks PDF headers before writing; does not parse or validate full PDF structure.
+    Validates the staged PDF in a bounded worker before publishing its index.
     """
     if not _is_pdf(body):
         raise ValueError(
@@ -202,6 +202,10 @@ def cache_put(doi: str, body: bytes, channel: str = "", url: str = "",
                 stream.flush()
                 os.fsync(stream.fileno())
             # Both files are fully staged before publishing either one.
+        from .pdf_validation import validate_pdf
+        checked = validate_pdf(staged[0][0])
+        if not checked.get('valid') or checked.get('sha256') != sha:
+            raise ValueError('cache_put: refusing structurally invalid PDF')
         for temporary, target in staged:
             temporary.replace(target)
         published = True
