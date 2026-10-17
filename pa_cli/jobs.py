@@ -1,4 +1,4 @@
-"""pa_cli.jobs - Job manager for pa fetch-pdf-batch (v3.9.14.1, [P2-15])
+"""pa_cli.jobs - Job manager for pa fetch-batch (v3.9.14.1, [P2-15])
 
 Adds a `pa jobs` Click group with 4 subcommands:
     - list:      show all jobs
@@ -10,16 +10,16 @@ Inspired by `instsci jobs status/tail/resume` (Round 14 / 2026-08-18
 coupling, see ROADMAP "Competitor coupling" section).
 
 **Design**:
-- Self-contained: `pa jobs start` wraps `pa fetch-pdf-batch` via
+- Self-contained: `pa jobs start` wraps `pa fetch-batch` via
   subprocess and writes manifest.json. No changes needed in
   fetch_batch.py.
 - Per-job directory: `~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt}`
 - Manifest is updated after subprocess exits (parses log for counts).
-- `pa jobs resume` calls `pa fetch-pdf-batch --skip-existing` to
+- `pa jobs resume` calls `pa fetch-batch --skip-existing` to
   re-fetch only failed/missing entries.
 
 **No network** in any `pa jobs` subcommand except `start` / `resume`
-(which internally call `pa fetch-pdf-batch`).
+(which internally call `pa fetch-batch`).
 
 **No state** lives outside `~/.paper-agent/jobs/` — fully local,
 fully deletable.
@@ -160,7 +160,7 @@ def list_jobs() -> List[Tuple[str, JobManifest]]:
 def parse_log_counts(log_text: str) -> Dict[str, int]:
     """Parse the log.txt for n_total / n_success / n_failed / n_skipped counts.
 
-    Looks for the lines written by `pa fetch-pdf-batch` failure report:
+    Looks for the lines written by `pa fetch-batch` failure report:
         - Total entries: N
         - Success: N
         - Failure: N
@@ -169,6 +169,12 @@ def parse_log_counts(log_text: str) -> Dict[str, int]:
     Returns dict with 0 defaults if not found.
     """
     out = {"n_total": 0, "n_success": 0, "n_failed": 0, "n_skipped": 0}
+    summaries = re.findall(
+        r"^\[pa fetch-batch\] total=(\d+) success=(\d+) failure=(\d+) skipped=(\d+)(?:\s|$)",
+        log_text, re.MULTILINE,
+    )
+    if summaries:
+        return dict(zip(out, map(int, summaries[-1])))
     patterns = {
         "n_total": re.compile(r"^\s*-\s*Total entries:\s*(\d+)", re.MULTILINE),
         "n_success": re.compile(r"^\s*-\s*Success:\s*(\d+)", re.MULTILINE),
@@ -212,7 +218,7 @@ def start_job(
     Side effects:
         - Creates ~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt}
         - Updates manifest as it goes (created_at -> running -> completed/failed)
-        - log.txt captures stdout + stderr from pa fetch-pdf-batch
+        - log.txt captures stdout + stderr from pa fetch-batch
 
     Sync: this is a blocking call. For long-running jobs, the user
     runs it in a terminal and `pa jobs tail/status/resume` in another.
@@ -231,11 +237,12 @@ def start_job(
     )
     write_manifest(manifest)
 
-    # Run pa fetch-pdf-batch in subprocess
+    # Run pa fetch-batch in subprocess
     log_path = get_log_path(job_id)
     cmd = [
-        sys.executable, "-m", "pa_cli.cli", "fetch-pdf-batch",
-        str(input_file), "--out", str(output_dir),
+        sys.executable, "-m", "pa_cli.cli", "fetch-batch",
+        str(input_file), "--out-dir", str(output_dir),
+        "--max-total-sec", str(max_total_sec),
     ]
     if prefer != "auto":
         cmd.extend(["--prefer", prefer])

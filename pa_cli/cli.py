@@ -2741,6 +2741,8 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
 
 @main.command(name="fetch-batch")
 @click.argument("bibtex_file", type=click.Path(exists=True, dir_okay=False))
+@click.option("--prefer", default="auto", show_default=True,
+              help="Preferred fetch source, e.g. pmc or auto")
 @click.option("--out-dir", required=True, type=click.Path(file_okay=False),
               help="Directory to save PDFs (created if not exists)")
 @click.option("--max-total-sec", type=int, default=1800, show_default=True,
@@ -2755,7 +2757,7 @@ def dedup_strict(bibtex_file, out_file, report_file, fuzzy_threshold):
               help="[v3.9.26.0] Delete .xml intermediate file (from JATS-to-PDF) "
                    "after successful PDF generation. Reduces clutter.")
 @click.option("--quiet", is_flag=True, help="Suppress per-entry progress output")
-def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
+def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file, prefer,
                 summary_json, clean_xml, quiet):
     """[P2-11] Batch PDF download from a Bibtex file.
 
@@ -2787,6 +2789,7 @@ def fetch_batch(bibtex_file, out_dir, max_total_sec, skip_existing, report_file,
             out_dir=out_path,
             max_total_sec=max_total_sec,
             skip_existing=skip_existing,
+            prefer=prefer,
             progress_callback=on_progress,
             clean_xml=clean_xml,  # v3.9.26.0
         )

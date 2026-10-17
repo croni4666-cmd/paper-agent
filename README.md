@@ -6,7 +6,7 @@
 
 <p align="center">Academic literature workflows from the command line.</p>
 
-**Current release: v4.1.2** · Python 3.10+ · [Releases](https://github.com/croni4666-cmd/paper-agent/releases)
+**Current release: v4.1.3** · Python 3.10+ · [Releases](https://github.com/croni4666-cmd/paper-agent/releases)
 
 **使用文档 / User guides:** [English](docs/usage.md) · [简体中文](docs/usage_zh.md)
 

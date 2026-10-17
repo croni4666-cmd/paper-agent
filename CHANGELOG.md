@@ -1,3 +1,11 @@
+# v4.1.3
+
+- Fix jobs calling the current batch CLI with source and timeout options; retain current summary counts.
+- Apply handroll domain stopwords to actual features and keywords; retain sources when the vocabulary is empty.
+- Apply only explicit user stopwords to handroll; keep automatic suggestions separate from applied counts to avoid deleting specialist terms.
+- Enable a real offline batch subprocess regression and two corpus-independent label contracts.
+- Keep seven unavailable original-corpus tests explicitly skipped.
+
 # v4.1.2
 
 - Preserve PMID/PMCID in BibTeX export.

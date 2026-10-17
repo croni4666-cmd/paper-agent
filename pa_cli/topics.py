@@ -488,8 +488,8 @@ def _cluster_labels(similarity, k, filenames):
     return list(ac.fit_predict(dist))
 
 
-def _build_tfidf_matrix(papers):
-    from sklearn.feature_extraction.text import TfidfVectorizer
+def _build_tfidf_matrix(papers, extra_stopwords=None):
+    from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
     docs = []
     filenames = []
     for p in papers:
@@ -510,7 +510,7 @@ def _build_tfidf_matrix(papers):
     cn_stops = _load_cn_stopwords()
     effective_max_df = 1.0 if len(docs) < 2 else 0.95
     vec = TfidfVectorizer(
-        stop_words="english",  # sklearn built-in
+        stop_words=sorted(set(ENGLISH_STOP_WORDS) | set(extra_stopwords or [])),
         ngram_range=(1, 2),
         max_features=2000,
         min_df=1,
@@ -525,7 +525,7 @@ def _build_tfidf_matrix(papers):
     if cn_stops and any(_is_chinese_heavy(d) for d in docs):
         # Combine sklearn's English stop words with our Chinese ones
         from sklearn.feature_extraction import _stop_words as sklearn_stopwords
-        combined_stops = list(sklearn_stopwords.ENGLISH_STOP_WORDS) + list(cn_stops)
+        combined_stops = list(sklearn_stopwords.ENGLISH_STOP_WORDS) + list(cn_stops) + list(extra_stopwords or [])
         vec = TfidfVectorizer(
             stop_words=combined_stops,
             ngram_range=(1, 2),
@@ -538,13 +538,13 @@ def _build_tfidf_matrix(papers):
     try:
         mat = vec.fit_transform(docs)
     except ValueError:
-        return None, []
+        return None, filenames
     return mat, filenames
 
 
-def _label_topics_fallback(clusters, tfidf_mat, filenames, concept_data, papers_by_filename):
+def _label_topics_fallback(clusters, tfidf_mat, filenames, concept_data, papers_by_filename, extra_stopwords=None):
     from collections import Counter
-    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
     clusters_set = sorted(set(clusters))
     topics = []
     for cid in clusters_set:
@@ -572,7 +572,7 @@ def _label_topics_fallback(clusters, tfidf_mat, filenames, concept_data, papers_
         ]
         try:
             vec = TfidfVectorizer(
-                stop_words="english",
+                stop_words=sorted(set(ENGLISH_STOP_WORDS) | set(extra_stopwords or [])),
                 ngram_range=(1, 2),
                 max_features=20,
                 min_df=1,
@@ -633,7 +633,7 @@ def _cluster_cohesion(similarity, labels):
 
 def _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=None):
     """Hand-rolled TF-IDF + Jaccard + Agglomerative. Used when BERTopic fails."""
-    tfidf_mat, filenames = _build_tfidf_matrix(papers)
+    tfidf_mat, filenames = _build_tfidf_matrix(papers, extra_stopwords=extra_stopwords)
     if tfidf_mat is None:
         warnings.append("handroll_tfidf_empty")
     concept_sets = [
@@ -648,7 +648,7 @@ def _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=None)
     else:
         clusters = _cluster_labels(similarity, k, filenames)
     papers_by_filename = {p["filename"]: p for p in papers}
-    topics = _label_topics_fallback(clusters, tfidf_mat, filenames, concept_data, papers_by_filename)
+    topics = _label_topics_fallback(clusters, tfidf_mat, filenames, concept_data, papers_by_filename, extra_stopwords=extra_stopwords)
     cohesion = _cluster_cohesion(similarity, clusters)
     for t in topics:
         cid_zero = t["topic_id"] - 1
@@ -763,8 +763,10 @@ def cluster_topics(
     Pluggable label generation (v3.8.0+):
       - label_method: which generator to use ("auto" = ctfidf)
       - custom_labels: {topic_id: label_str} overrides auto labels
-      - domain_stopwords: corpus-specific noise terms (tool names, file
-                          extensions) added to c-TF-IDF stop_words
+      - domain_stopwords: explicit noise terms added to features and keywords.
+                          Automatic suggestions are not applied to handroll;
+                          they can contain specialist terms. Output separates
+                          candidate count from applied count.
       - bertopic_timeout: seconds to wait on sentence-transformers model
                           download before falling back to handroll.
                           Default 60s (per paper-agent v4 principle: "after
@@ -774,6 +776,7 @@ def cluster_topics(
     Returns the same topics.json schema regardless of method.
     """
     global _CONCEPT_DATA_INTERNAL
+    explicit_domain_stopwords = domain_stopwords is not None
     warnings: List[str] = []
     method_used = "handroll"  # default
 
@@ -823,6 +826,10 @@ def cluster_topics(
         except Exception as e:
             warnings.append(f"domain_stopwords_auto_mine_failed:{type(e).__name__}")
             domain_stopwords = []
+
+    # Automatic noise candidates can include specialist terms. Preserve the
+    # existing handroll default and apply only a user-supplied list there.
+    handroll_stopwords = domain_stopwords if explicit_domain_stopwords else []
 
     # Step C: decide method
     n = len(papers)
@@ -882,11 +889,11 @@ def cluster_topics(
                 k_actual = 1
         except Exception as e:
             warnings.append(f"bertopic_failed_fallback_to_handroll:{type(e).__name__}:{str(e)[:150]}")
-            topics, _ = _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=domain_stopwords)
+            topics, _ = _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=handroll_stopwords)
             method_used = "handroll"
             k_actual = len(topics)
     else:
-        topics, _ = _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=domain_stopwords)
+        topics, _ = _cluster_with_handroll(papers, concept_data, warnings, extra_stopwords=handroll_stopwords)
         k_actual = len(topics)
 
     # Apply custom label overrides (v3.8.0+ — see pa_cli/labels/custom.py)
@@ -901,6 +908,9 @@ def cluster_topics(
             warnings.append(f"custom_labels_applied_for_{len(custom_labels)}_topics")
         except Exception as e:
             warnings.append(f"custom_labels_failed:{type(e).__name__}:{str(e)[:100]}")
+
+    if method_used == "handroll" and not explicit_domain_stopwords and domain_stopwords:
+        warnings.append("automatic_stopword_suggestions_not_applied_to_handroll")
 
     # Build concept_data summary for downstream consumers
     concept_data_summary: Dict[str, Dict] = {}
@@ -928,6 +938,10 @@ def cluster_topics(
         "warnings": warnings,
         "custom_labels": {str(k): v for k, v in (custom_labels or {}).items()},
         "domain_stopwords_count": len(domain_stopwords) if domain_stopwords else 0,
+        "domain_stopwords_source": "user" if explicit_domain_stopwords else "automatic",
+        # The optional BERTopic vectorizer does not expose an application
+        # receipt here. Null means unmeasured, never a claimed filtering count.
+        "domain_stopwords_applied_count": len(handroll_stopwords or []) if method_used == "handroll" else None,
         "topics": topics,
         "concept_data": concept_data_summary,
     }

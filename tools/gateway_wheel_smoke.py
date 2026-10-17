@@ -13,7 +13,7 @@ from pa_cli.gateway_store import GatewayStore
 
 
 def run():
-    assert pa_cli.__version__ == version("paper-agent") == "4.1.2"
+    assert pa_cli.__version__ == version("paper-agent") == "4.1.3"
     with tempfile.TemporaryDirectory(prefix="gateway-wheel-") as directory:
         root = Path(directory)
         artifact = root / "generated.xml"

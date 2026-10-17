@@ -251,10 +251,8 @@ class TestE2EListJobs(unittest.TestCase):
 class TestE2EStartJob(unittest.TestCase):
     """T8: start_job() runs pa fetch-pdf-batch via subprocess and updates manifest.
 
-    Uses a tiny fixture Bibtex with 1 entry that will fail (DOI doesn't
-    exist). Uses a SHORT max_total_sec (5s) so the test runs fast.
-    The subprocess will likely time out and mark the job INTERRUPTED,
-    but the manifest is still written — that's the contract we're testing.
+    Uses a tiny BibTeX and an existing valid PDF. The actual subprocess
+    must succeed offline, preserve the PDF, and report one skipped entry.
     """
 
     FIXTURE_BIB = r"""
@@ -266,12 +264,7 @@ class TestE2EStartJob(unittest.TestCase):
 }
 """
 
-    @unittest.skipIf(True, "skipping — invokes real pa fetch-pdf-batch subprocess")
     def test_start_job_creates_manifest_and_log(self):
-        # This test would need a fake pa fetch-pdf-batch to avoid network.
-        # Skipping for now; the unit tests above cover the manifest logic.
-        # TODO: refactor start_job to inject the subprocess command for
-        # testing, then re-enable this e2e.
         with tempfile.TemporaryDirectory() as tmp:
             import os
             tmp_path = Path(tmp)
@@ -282,6 +275,10 @@ class TestE2EStartJob(unittest.TestCase):
                 bib.write_text(self.FIXTURE_BIB, encoding="utf-8")
                 out_dir = tmp_path / "pdfs"
                 out_dir.mkdir()
+                # A real valid PDF makes the real batch subprocess deterministic
+                # and offline: it must report this entry as skipped-existing.
+                from test_output.fetch_m1a_helpers import FAKE_PDF
+                (out_dir / 'testentry.pdf').write_bytes(FAKE_PDF)
 
                 returncode = jobs_mod.start_job(
                     job_id="e2e_test",
@@ -294,6 +291,9 @@ class TestE2EStartJob(unittest.TestCase):
                 m = jobs_mod.read_manifest("e2e_test")
                 self.assertIsNotNone(m, "manifest should be created")
                 self.assertEqual(m.job_id, "e2e_test")
+                self.assertEqual(returncode, 0, jobs_mod.get_log_path('e2e_test').read_text(encoding='utf-8'))
+                self.assertEqual((m.n_total, m.n_success, m.n_failed, m.n_skipped), (1, 0, 0, 1))
+                self.assertEqual(m.status, jobs_mod.STATUS_COMPLETED)
             finally:
                 if old is None:
                     os.environ.pop("PA_JOBS_DIR", None)

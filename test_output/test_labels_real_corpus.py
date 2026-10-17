@@ -355,6 +355,9 @@ class TestRealCorpusCLI(unittest.TestCase):
         self.assertGreater(data["k"], 0)
         self.assertEqual(data["label_method"], "ctfidf")
 
+class TestLabelGeneratorContracts(unittest.TestCase):
+    """Pure generator contracts; no external corpus or CLI is required."""
+
     def test_cli_abc_three_generators_actually_implement(self):
         """Verify v3.8.3 fix: CTFIDF + Handroll + Custom all implement ABC.
 
