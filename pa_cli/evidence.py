@@ -271,6 +271,41 @@ def build_packet(index, query, *, max_bytes=16000, max_spans=6, required_section
     return assemble(selected)
 
 
+def review_claim(path, claim, *, max_spans=3):
+    """Return lexical retrieval candidates for human review, never entailment.
+
+    CLI Skill and MCP must share this policy: even an exact positive phrase
+    does not establish study applicability, causality, or a scientific verdict.
+    """
+    index = build_index(path)
+    packet = build_packet(index, query=claim, max_spans=max_spans)
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'in', 'on', 'at', 'to', 'for',
+                  'with', 'by', 'of', 'is', 'are', 'was', 'were'}
+    terms = set(re.findall(r'\w+', claim.casefold())) - stop_words
+    passages = []
+    for span in packet.get('evidence', []):
+        overlap = terms & set(re.findall(r'\w+', span['text'].casefold()))
+        passages.append({
+            'page': span['page'], 'section': span.get('section', 'unknown'),
+            'offsets': [span['start'], span['end']], 'evidence_id': span['evidence_id'],
+            'matching_keywords': sorted(overlap),
+            'overlap_ratio': round(len(overlap) / len(terms), 3) if terms else 0.0,
+            'verbatim_text': span['text'].strip(),
+        })
+    best = max(passages, key=lambda p: p['overlap_ratio']) if passages else None
+    return {
+        'claim': claim, 'verdict': 'insufficient_evidence', 'confidence': 0.0,
+        'verification_status': 'human_review_required',
+        'match_method': 'lexical_overlap_not_entailment',
+        'max_overlap_ratio': best['overlap_ratio'] if best else 0.0,
+        'best_match_page': best['page'] if best else None,
+        'best_match_section': best['section'] if best else None,
+        'reason': 'Retrieved passages are candidates for human review only; lexical overlap does not establish scientific support or contradiction.',
+        'supporting_passages': [], 'evidence_passages': passages,
+        'artifact_sha256': packet.get('artifact_sha256'),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description='Build local PDF evidence index or query packet; no uploads.')
     parser.add_argument('pdf', type=Path)

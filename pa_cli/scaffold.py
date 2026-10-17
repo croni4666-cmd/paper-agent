@@ -496,18 +496,38 @@ def _group_by_topic(
     if not isinstance(topic_list, list) or not topic_list:
         return [("All Papers", entries)]
     key_to_entry = {e["key"]: e for e in entries}
+    # review-topics emits filenames, not BibTeX keys. Resolve only an exact,
+    # unique key/stem match; unknown members stay explicitly unclustered.
+    file_to_keys = defaultdict(set)
+    for key in key_to_entry:
+        file_to_keys[Path(str(key)).stem].add(key)
+        file_to_keys[str(key)].add(key)
+    key_to_files = defaultdict(set)
+    for topic in topic_list:
+        for filename in topic.get('filenames', []):
+            matches = file_to_keys.get(Path(filename).stem, set())
+            if len(matches) == 1:
+                key_to_files[next(iter(matches))].add(filename)
+    assigned = set()
     groups = []
     for t in topic_list:
-        label = t.get("label") or f"Topic {t.get('id', '?')}"
-        paper_keys = t.get("papers", [])
-        papers = [key_to_entry[k] for k in paper_keys if k in key_to_entry]
+        label = t.get("label") or f"Topic {t.get('topic_id', t.get('id', '?'))}"
+        paper_keys = list(t.get("papers", []))
+        for filename in t.get('filenames', []):
+            matches = file_to_keys.get(Path(filename).stem, set())
+            if len(matches) == 1:
+                key = next(iter(matches))
+                if len(key_to_files[key]) == 1:
+                    paper_keys.append(key)
+        papers = []
+        for key in paper_keys:
+            if key in key_to_entry and key not in assigned:
+                papers.append(key_to_entry[key]); assigned.add(key)
         if papers:
             groups.append((label, papers))
-    outliers = topics.get("outliers", [])
-    if outliers:
-        outlier_entries = [key_to_entry[k] for k in outliers if k in key_to_entry]
-        if outlier_entries:
-            groups.append(("Other / Unclustered", outlier_entries))
+    outlier_entries = [e for e in entries if e['key'] not in assigned]
+    if outlier_entries:
+        groups.append(("Other / Unclustered", outlier_entries))
     return groups or [("All Papers", entries)]
 
 

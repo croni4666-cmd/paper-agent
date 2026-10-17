@@ -61,6 +61,15 @@ Examples:
     if str(pa_root) not in sys.path:
         sys.path.insert(0, str(pa_root))
 
+    pdf_path = Path(args.pdf).expanduser().resolve()
+    if args.output and Path(args.output).expanduser().resolve() == pdf_path:
+        print(json.dumps({"error": "output_overwrites_source"}), file=sys.stderr)
+        return 2
+    from _pa_runtime import delegate_to_runtime
+    delegated = delegate_to_runtime(__file__, sys.argv[1:], pa_root)
+    if delegated is not None:
+        return delegated
+
     try:
         from pa_cli.evidence import build_index, build_packet
     except ImportError as e:

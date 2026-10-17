@@ -170,8 +170,8 @@ TOOL_PA_EVIDENCE = Tool(
 TOOL_PA_VERIFY_CLAIM = Tool(
     name="pa_verify_claim",
     description=(
-        "Verify an academic claim against a PDF manuscript with exact page citations and character offsets. "
-        "Zero hallucination: quotes verbatim text from the paper."
+        "Retrieve verbatim PDF passages with exact page citations and character offsets for human claim review. "
+        "Lexical overlap does not establish scientific support or contradiction."
     ),
     inputSchema={
         "type": "object",
@@ -422,84 +422,19 @@ def _handle_pa_evidence(arguments: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def _handle_pa_verify_claim(arguments: Dict[str, Any]) -> Dict[str, Any]:
-    """Handler for `pa_verify_claim` tool. Verifies claim against PDF text."""
-    import re
-    from .evidence import build_index, build_packet
-
-    pdf_path_str = arguments.get("pdf_path")
-    if not pdf_path_str:
+    """Retrieve passages under the shared human-review-only policy."""
+    from .evidence import review_claim
+    path = arguments.get("pdf_path")
+    claim = arguments.get("claim", "")
+    if not path:
         return {"error": "missing_arg: pdf_path", "tool": "pa_verify_claim"}
-
-    claim = arguments.get("claim")
-    if not claim:
+    if not isinstance(claim, str) or not claim.strip():
         return {"error": "missing_arg: claim", "tool": "pa_verify_claim"}
+    pdf = Path(path).expanduser().resolve()
+    if not pdf.is_file():
+        return {"error": f"file_not_found: {pdf}", "tool": "pa_verify_claim"}
+    return review_claim(pdf, claim, max_spans=int(arguments.get("max_spans", 3)))
 
-    pdf_path = Path(pdf_path_str).expanduser().resolve()
-    if not pdf_path.is_file():
-        return {"error": f"file_not_found: {pdf_path}", "tool": "pa_verify_claim"}
-
-    max_spans = int(arguments.get("max_spans", 3))
-    index = build_index(pdf_path)
-    packet = build_packet(index, query=claim, max_spans=max_spans)
-
-    evidence = packet.get("evidence", [])
-    if not evidence:
-        return {
-            "claim": claim,
-            "verdict": "insufficient_evidence",
-            "confidence": 0.0,
-            "supporting_passages": [],
-            "reason": "No relevant text passages found matching the claim in the PDF.",
-            "artifact_sha256": packet.get("artifact_sha256"),
-        }
-
-    claim_words = set(re.findall(r"\w+", claim.casefold()))
-    stop_words = {"the", "a", "an", "and", "or", "in", "on", "at", "to", "for", "with", "by", "of", "is", "are", "was", "were"}
-    informative_words = claim_words - stop_words
-
-    supporting = []
-    max_overlap_ratio = 0.0
-
-    for span in evidence:
-        span_words = set(re.findall(r"\w+", span["text"].casefold()))
-        overlap = informative_words & span_words
-        overlap_ratio = len(overlap) / len(informative_words) if informative_words else 0.0
-        if overlap_ratio > max_overlap_ratio:
-            max_overlap_ratio = overlap_ratio
-
-        supporting.append({
-            "page": span["page"],
-            "section": span.get("section", "unknown"),
-            "offsets": [span["start"], span["end"]],
-            "evidence_id": span["evidence_id"],
-            "matching_keywords": sorted(list(overlap)),
-            "overlap_ratio": round(overlap_ratio, 3),
-            "verbatim_text": span["text"].strip(),
-        })
-
-    if max_overlap_ratio >= 0.50:
-        verdict = "supported"
-        conf = min(1.0, round(max_overlap_ratio * 1.1, 2))
-        reason = f"High keyword and semantic alignment ({round(max_overlap_ratio*100)}% informative terms matched) in {supporting[0]['section']} section on page {supporting[0]['page']}."
-    elif max_overlap_ratio >= 0.25:
-        verdict = "partially_supported"
-        conf = round(max_overlap_ratio, 2)
-        reason = f"Partial term match ({round(max_overlap_ratio*100)}%) found. Human review recommended to confirm specific assertion."
-    else:
-        verdict = "insufficient_evidence"
-        conf = round(max_overlap_ratio, 2)
-        reason = "Extracted passages do not contain enough overlapping terminology to substantiate the claim."
-
-    return {
-        "claim": claim,
-        "verdict": verdict,
-        "confidence": conf,
-        "best_match_page": supporting[0]["page"] if supporting else None,
-        "best_match_section": supporting[0]["section"] if supporting else None,
-        "reason": reason,
-        "supporting_passages": supporting,
-        "artifact_sha256": packet.get("artifact_sha256"),
-    }
 
 
 def _handle_pa_zotero_check(arguments: Dict[str, Any]) -> Dict[str, Any]:

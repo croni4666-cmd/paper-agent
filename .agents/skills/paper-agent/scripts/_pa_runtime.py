@@ -24,6 +24,26 @@ def find_pa_python(root: Path) -> str:
     return sys.executable
 
 
+def delegate_to_runtime(script, arguments, root, timeout=120):
+    """Run a Python-only wrapper with the selected backend's dependencies."""
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')
+    python = Path(find_pa_python(Path(root))).resolve()
+    if python == Path(sys.executable).resolve():
+        return None
+    try:
+        result = subprocess.run(
+            [str(python), str(Path(script).resolve()), *arguments],
+            env=dict(os.environ, PYTHONUTF8='1', PYTHONIOENCODING='utf-8'),
+            timeout=timeout,
+        )
+        return result.returncode
+    except subprocess.TimeoutExpired:
+        print(json.dumps({'error': 'runtime_timeout', 'exit_code': 124}), file=sys.stderr)
+        return 124
+
+
 def run_pa(cmd, *, cwd, timeout):
     """Use one interpreter and explicit UTF-8 for both ends of the subprocess."""
     for stream in (sys.stdout, sys.stderr):

@@ -182,3 +182,5 @@ search_results/
 searches/
 training_corpus/
 
+
+.release-gate/

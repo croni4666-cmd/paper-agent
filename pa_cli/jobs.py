@@ -69,6 +69,7 @@ class JobManifest:
     n_skipped: int = 0
     last_error: Optional[str] = None
     pid: Optional[int] = None  # process ID if running
+    max_total_sec: int = 1800
 
     def to_dict(self) -> Dict:
         return asdict(self)
@@ -223,6 +224,10 @@ def start_job(
     Sync: this is a blocking call. For long-running jobs, the user
     runs it in a terminal and `pa jobs tail/status/resume` in another.
     """
+    if type(max_total_sec) is not int or max_total_sec <= 0:
+        raise ValueError('max_total_sec must be a positive integer')
+    input_file = Path(input_file).resolve()
+    output_dir = Path(output_dir).resolve()
     job_dir = get_job_dir(job_id)
     job_dir.mkdir(parents=True, exist_ok=True)
 
@@ -232,6 +237,7 @@ def start_job(
         input_file=str(input_file),
         output_dir=str(output_dir),
         prefer=prefer,
+        max_total_sec=max_total_sec,
         status=STATUS_RUNNING,
         started_at=datetime.now().isoformat(timespec="seconds"),
     )
@@ -292,8 +298,8 @@ def start_job(
         if returncode == 0 and manifest.n_failed == 0:
             manifest.status = STATUS_COMPLETED
         elif returncode == 0 and manifest.n_failed > 0:
-            # Returned 0 but had failures — mark completed with failures
-            manifest.status = STATUS_COMPLETED
+            manifest.status = STATUS_FAILED
+            returncode = 1
         else:
             manifest.status = STATUS_FAILED
 
@@ -301,7 +307,7 @@ def start_job(
     return returncode
 
 
-def resume_job(job_id: str) -> int:
+def resume_job(job_id: str, max_total_sec: Optional[int] = None) -> int:
     """Re-run a job. Same args, but `--skip-existing` will skip entries
     that already have a PDF on disk (so only failed/missing are retried).
 
@@ -318,6 +324,7 @@ def resume_job(job_id: str) -> int:
         input_file=Path(m.input_file),
         output_dir=Path(m.output_dir),
         prefer=m.prefer,
+        max_total_sec=m.max_total_sec if max_total_sec is None else max_total_sec,
     )
 
 

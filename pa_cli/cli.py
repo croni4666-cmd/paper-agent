@@ -486,7 +486,7 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
     raw_concepts = []
     if concept_ids:
         raw_concepts.extend(s.strip() for s in concept_ids.split(",") if s.strip())
-    raw_concepts.extend(concept_names)
+    raw_concepts.extend([concept_names] if isinstance(concept_names, str) else concept_names)
 
     resolved_ids: list = []
     resolved_meta: list = []
@@ -521,6 +521,7 @@ def search(query, year_min, year_max, limit, engine, out_format, output,
                          enrich_top_min_cites=enrich_top_min_cites,
                          sort_by=sort_by,
                          source_filter=src_list,
+                         aminer_mode=aminer_mode,
                          enrich_max_age_years=enrich_max_age_years)
     # [P2-14] Quality filter: flag/filter/off (default flag — annotates, doesn't drop)
     from .quality_filter import apply_quality_filter, summarize_quality
@@ -4295,15 +4296,15 @@ def jobs():
 @click.option("--out", "output_dir", required=True, type=click.Path(),
               help="Output directory for fetched PDFs (created if missing)")
 @click.option("--prefer", default="auto",
-              type=click.Choice(["auto", "scihub", "annas", "cnki", "arxiv", "direct"]),
+              type=click.Choice(["auto", "scihub", "annas", "cnki", "arxiv", "pmc", "pmc-pdf", "unpaywall", "s2", "biorxiv", "core", "osf", "chemrxiv"]),
               help="Preferred fetch channel (default: auto)")
 @click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
               help="Max total seconds before timeout (default 1800 = 30 min)")
 def jobs_start(job_id, input_file, output_dir, prefer, max_total_sec):
-    """[P2-15] Start a new fetch-pdf-batch job.
+    """[P2-15] Start a new fetch-batch job.
 
     Creates ~/.paper-agent/jobs/<job_id>/{manifest.json, log.txt} and
-    runs `pa fetch-pdf-batch` synchronously, writing the manifest on
+    runs `pa fetch-batch` synchronously, writing the manifest on
     completion. For long jobs, run in one terminal and `pa jobs status`
     / `pa jobs tail` in another.
     """
@@ -4350,7 +4351,7 @@ def jobs_start(job_id, input_file, output_dir, prefer, max_total_sec):
             f"failed={final.n_failed}",
             err=True,
         )
-    sys.exit(returncode if returncode > 0 else 0)
+    sys.exit(returncode if returncode >= 0 else (124 if returncode == -1 else 130))
 
 
 @jobs.command(name="list")
@@ -4407,8 +4408,8 @@ def jobs_tail(job_id, n_lines):
 
 @jobs.command(name="resume")
 @click.argument("job_id")
-@click.option("--max-total-sec", "max_total_sec", default=1800, type=int,
-              help="Max total seconds before timeout (default 1800 = 30 min)")
+@click.option("--max-total-sec", "max_total_sec", default=None, type=click.IntRange(min=1),
+              help="Override timeout in seconds; otherwise keep the original job budget")
 def jobs_resume(job_id, max_total_sec):
     """[P2-15] Re-run a job (only failed/missing entries, --skip-existing)."""
     from . import jobs as jobs_mod
@@ -4428,7 +4429,7 @@ def jobs_resume(job_id, max_total_sec):
             f"failed={final.n_failed}",
             err=True,
         )
-    sys.exit(returncode if returncode > 0 else 0)
+    sys.exit(returncode if returncode >= 0 else (124 if returncode == -1 else 130))
 
 
 @main.command()

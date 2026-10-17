@@ -54,7 +54,7 @@ jobs:
         run: python test_output/test_security_audit.py
       - name: Run offline test suite
         run: |
-          python -m pytest -q -rs
+          python tools/release_quality_gate.py --output .release-gate
           python -m unittest test_output.test_doctor_offline -v
           python test_output/test_cache_atomic_safety.py
           python test_output/test_cache_smoke.py

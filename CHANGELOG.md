@@ -1,3 +1,10 @@
+## v4.1.4 (2026-10-17)
+
+- Validate batch PDFs, reject colliding output keys, preserve resume budgets and report failed job exits.
+- Preserve saved-search scalar terms and explicit engine mode; fix scaffold matching and BibTeX macro export.
+- Share retrieval-only claim review across MCP and Skill; delegate evidence entrypoints to the configured interpreter, preserve Unicode and reject input overwrite.
+- Add a full-suite release gate with named unexecuted corpus/platform exceptions and exact-commit publication requirements.
+
 # v4.1.3
 
 - Fix jobs calling the current batch CLI with source and timeout options; retain current summary counts.

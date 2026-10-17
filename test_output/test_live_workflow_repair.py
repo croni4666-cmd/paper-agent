@@ -146,6 +146,10 @@ class ArxivTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             entry = {'key': 'software', 'title': 'Software workflow',
                      'eprint': '2405.01543v1', 'archiveprefix': 'arXiv'}
+            # Successful transport must provide an actual parseable PDF.
+            with pymupdf.open() as doc:
+                doc.new_page().insert_text((72, 72), 'Software workflow')
+                doc.save(Path(temp) / 'software.pdf')
             with patch('pa_cli.fetch.fetch', return_value={'source': 'arxiv', 'size': 100, 'path': str(Path(temp) / 'software.pdf')}) as fetch:
                 result = _fetch_one_entry(entry, Path(temp), prefer='arxiv')
             self.assertTrue(result.success)

@@ -91,6 +91,30 @@ class FetchSummary:
 # Per-entry fetch
 # ──────────────────────────────────────────────────────────────────────
 
+def _filename_for_key(key: str) -> str:
+    import hashlib
+    import re
+    key = str(key)
+    clean = re.sub(r'[^A-Za-z0-9_\-.]', '_', key).strip('._') or 'unknown'
+    reserved = re.fullmatch(r'(?i:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?', clean)
+    if clean != key or len(clean) > 120 or reserved:
+        digest = hashlib.sha256(key.encode('utf-8')).hexdigest()[:16]
+        clean = ('safe_' if reserved else '') + clean[:100] + '_' + digest
+    return clean + '.pdf'
+
+
+def _checked_download(result: Dict, out_path: Path) -> Dict:
+    """Channel metadata alone never establishes that a PDF was retrieved."""
+    if 'error' in result:
+        return result
+    from .pdf_validation import validate_pdf
+    path = Path(result.get('path') or out_path)
+    checked = validate_pdf(path) if path.is_file() else {}
+    if not checked.get('valid'):
+        return dict(result, error='invalid_pdf')
+    return dict(result, path=str(path), size_bytes=checked['size'])
+
+
 def _fetch_one_entry(
     entry: Dict,
     out_dir: Path,
@@ -108,19 +132,19 @@ def _fetch_one_entry(
     doi, aid = split_identifiers(entry)
     identifier = doi or (f'arXiv:{aid}' if aid else '')
     title = entry.get('title', '')
-    clean_key = re.sub(r'[^A-Za-z0-9_\-.]', '_', str(key)).strip('._') or 'unknown'
-    out_path = out_dir / f"{clean_key}.pdf"
+    out_path = out_dir / _filename_for_key(key)
     try:
         out_path.resolve().relative_to(out_dir.resolve())
     except ValueError:
-        out_path = out_dir / f"sanitized_{clean_key[:32]}.pdf"
+        raise ValueError('PDF output escapes output directory')
     result = FetchResult(key=key, doi=doi, title=title, success=False)
 
     if not identifier and not title:
         result.error = 'no doi or title'
         return result
 
-    if skip_existing and out_path.exists() and out_path.stat().st_size > 0:
+    from .pdf_validation import validate_pdf
+    if skip_existing and out_path.is_file() and validate_pdf(out_path).get('valid'):
         result.success = True
         result.out_path = str(out_path)
         result.size_bytes = out_path.stat().st_size
@@ -131,7 +155,7 @@ def _fetch_one_entry(
     try:
         # fetch's scalar transport accepts arXiv IDs; result.doi stays bibliographic.
         if identifier:
-            r = fetch(doi=identifier, out_path=str(out_path), prefer=prefer)
+            r = _checked_download(fetch(doi=identifier, out_path=str(out_path), prefer=prefer), out_path)
             if 'error' not in r:
                 result.success = True
                 result.source = r.get('source', '')
@@ -151,7 +175,7 @@ def _fetch_one_entry(
             result.error = r.get('error', 'fetch failed')
         # Try title fallback
         if title:
-            r = fetch(title=title, out_path=str(out_path), prefer=prefer)
+            r = _checked_download(fetch(title=title, out_path=str(out_path), prefer=prefer), out_path)
             if 'error' not in r:
                 result.success = True
                 result.source = r.get('source', '')
@@ -202,6 +226,8 @@ def run_fetch_batch(
     """
     out_dir.mkdir(parents=True, exist_ok=True)
     entries = load_bibtex(bib_path)
+    from collections import Counter
+    filenames = Counter(_filename_for_key(e.get('key', 'unknown')).casefold() for e in entries)
     summary = FetchSummary(n_total=len(entries))
     t_start = time.time()
 
@@ -222,7 +248,12 @@ def run_fetch_batch(
                 summary.n_skipped += 1
             break
 
-        result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
+        if filenames[_filename_for_key(entry.get('key', 'unknown')).casefold()] > 1:
+            result = FetchResult(key=entry.get('key', 'unknown'), doi=entry.get('doi', ''),
+                                 title=entry.get('title', ''), success=False,
+                                 error='duplicate output filename; use unique BibTeX keys')
+        else:
+            result = _fetch_one_entry(entry, out_dir, skip_existing=skip_existing, prefer=prefer)
         summary.results.append(result)
         # v3.9.26.0: check skipped first (skipped has success=True with
         # error='skipped-existing'); otherwise skip counts as success

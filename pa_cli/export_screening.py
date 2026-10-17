@@ -55,6 +55,12 @@ def build_screening_dict(bib_path: Path) -> Dict[str, Dict[str, str]]:
         key = e.get('key')
         if not key:
             continue
+        from .scaffold import resolve_bibtex_value
+        bare_fields = set(e.get('_bare_fields') or ())
+        e = dict(e)
+        for field in ('title', 'abstract', 'author', 'year', 'doi', 'url'):
+            if field in e:
+                e[field] = resolve_bibtex_value(e[field], is_bare=field in bare_fields, macros=e.get('_macros'))
         # Authors field in bibtex is comma-separated "Last, First and Last2, First2"
         authors = e.get('author', '').replace(' and ', '; ')
         venue_field = None
