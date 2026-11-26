@@ -35,7 +35,8 @@ class DoctorTests(unittest.TestCase):
 
     def test_credential_values_never_appear(self):
         with patch.dict(doctor.os.environ, {
-            "AMINER_API_KEY": "sensitive-a", "S2_API_KEY": "sensitive-b", "NCBI_API_KEY": "sensitive-c"
+            "OPENALEX_API_KEY": "sensitive-oa", "UNPAYWALL_EMAIL": "sensitive-up@example.com",
+            "AMINER_API_KEY": "sensitive-a", "NCBI_API_KEY": "sensitive-c"
         }), patch.object(doctor.importlib.util, "find_spec", return_value=object()), patch.object(
             doctor.shutil, "which", return_value="private/executable/path"
         ):

@@ -102,6 +102,7 @@ jobs:
           python test_output/test_rereview_findings_c75087e.py
           python test_output/test_security_audit_4bc4377.py
           python test_output/test_consistency_boundaries.py
+          python test_output/test_v4_1_5_fixes.py
           python -m pytest test_output/test_process_identity_v4.py test_output/test_gateway_store_v4.py test_output/test_gateway_v4.py -q
 
   package:

@@ -32,7 +32,7 @@ def build_report() -> Dict[str, Any]:
         "zotero": _package("pyzotero", "pyzotero"),
     }
     checks["playwright"]["next_action"] = (
-        "Browser installation and launch are not checked; use pa cnki status for channel details."
+        "Browser installation and launch are not checked; required only for pmc-pdf rendering."
     )
     try:
         pandoc = shutil.which("pandoc") is not None
@@ -43,8 +43,9 @@ def build_report() -> Dict[str, Any]:
     except Exception:
         checks["pandoc"] = {"status": "unknown", "summary": "Cannot inspect Pandoc on PATH."}
     for name, variables in {
+        "openalex": ("OPENALEX_API_KEY",),
+        "unpaywall": ("UNPAYWALL_EMAIL",),
         "aminer": ("AMINER_API_KEY", "AM_API_KEY"),
-        "semantic_scholar": ("S2_API_KEY",),
         "pubmed": ("NCBI_API_KEY",),
     }.items():
         configured = any(os.environ.get(key, "").strip() for key in variables)

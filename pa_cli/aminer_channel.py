@@ -59,6 +59,19 @@ def _http_get(url: str, headers: Dict[str, str], timeout: int = 30) -> tuple:
     from ._http import http_get_json as _http_get_json_helper
     return _http_get_json_helper(url, headers=headers, timeout=timeout)
 
+
+def _is_auth_error(status: int, data: Any) -> bool:
+    """Detect AMiner authentication or expired-token errors (HTTP 401/403 or code 40308)."""
+    if status in (401, 403):
+        return True
+    if isinstance(data, dict):
+        if data.get("code") in (401, 403, 40308):
+            return True
+        msg = str(data.get("msg") or data.get("message") or "").lower()
+        if "invalid token" in msg or "token expired" in msg or "unauthorized" in msg:
+            return True
+    return False
+
 def _title_relevance_score(title: str, query: str) -> float:
     """Score title relevance to full query. Returns 0.0-1.0.
 
@@ -147,6 +160,12 @@ def search_aminer_pro(query: str, year_min: int = None, year_max: int = None,
     }
     time.sleep(1.2)  # jitter
     status, data = _http_get(url, headers)
+    if _is_auth_error(status, data):
+        return [{"error": E_AUTH,
+                 "message": "AMiner API token invalid or expired (code 40308); refresh AMINER_API_KEY at open.aminer.cn",
+                 "query": query,
+                 "status": status,
+                 "hint": "Regenerate JWT at open.aminer.cn or unset AMINER_API_KEY to skip AMiner."}]
     if status != 200 or not isinstance(data, dict):
         return [{"error": E_API_ERROR,
                  "query": query,
@@ -240,12 +259,15 @@ def search_aminer(query: str, year_min: int = None, year_max: int = None,
         if len(words) >= 2:
             # Use pro first; fall back to basic if pro returns 0 or fails
             pro_results = search_aminer_pro(query, year_min, year_max, limit)
+            # Fail fast on auth/missing-token errors instead of wasting basic calls
+            if pro_results and len(pro_results) == 1 and pro_results[0].get("error") in (E_AUTH, E_NO_TOKEN):
+                return pro_results
             # If pro returns error or empty, try basic
             if not pro_results or (len(pro_results) == 1 and "error" in pro_results[0]):
                 basic_results = _search_aminer_basic(query, year_min, year_max, limit)
                 # Mark basic results as fallback
                 for r in basic_results:
-                    if "match_type" not in r:
+                    if "error" not in r and "match_type" not in r:
                         r["match_type"] = "basic_fallback"
                 return _merge_aminer_results(pro_results, basic_results, limit)
             return pro_results
@@ -268,6 +290,9 @@ def _merge_aminer_results(pro: List[Dict], basic: List[Dict], limit: int) -> Lis
     # Filter errors
     pro_clean = [r for r in pro if "error" not in r]
     basic_clean = [r for r in basic if "error" not in r]
+    if not pro_clean and not basic_clean:
+        errs = [r for r in (pro + basic) if "error" in r]
+        return errs[:1]
 
     # Dedupe by aminer_id
     seen = {}
@@ -346,6 +371,11 @@ def _search_aminer_basic(query: str, year_min: int = None, year_max: int = None,
         }
         time.sleep(1.2)  # jitter
         status, data = _http_get(url, headers)
+        if _is_auth_error(status, data):
+            return [{"error": E_AUTH,
+                     "message": "AMiner API token invalid or expired (code 40308); refresh AMINER_API_KEY at open.aminer.cn",
+                     "status": status,
+                     "hint": "Regenerate JWT at open.aminer.cn or unset AMINER_API_KEY to skip AMiner."}]
         if status != 200 or not isinstance(data, dict):
             errors.append({"phrase": ph, "status": status, "data": str(data)[:200]})
             continue

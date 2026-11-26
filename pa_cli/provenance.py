@@ -55,6 +55,11 @@ def _metadata(path, raw_bytes=None):
         # Strip JATS namespace only; never search the body or back matter.
         for node in tree.iter():
             node.tag = node.tag.rsplit('}', 1)[-1]
+        if tree.tag == 'pmc-articleset':
+            articles = tree.findall('./article')
+            if len(articles) != 1:
+                raise ValueError('not_jats_article')
+            tree = articles[0]
         if tree.tag != 'article':
             raise ValueError('not_jats_article')
         meta = tree.find('./front/article-meta')

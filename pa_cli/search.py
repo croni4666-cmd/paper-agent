@@ -395,7 +395,7 @@ def search_crossref(query: str, year_min: int = None, year_max: int = None,
     url = (f"https://api.crossref.org/works?query.bibliographic={quote(query)}"
            f"&rows={min(limit, 100)}{fq}&select=DOI,title,author,abstract,"
            f"container-title,published-print,is-referenced-by-count,references-count,type")
-    s, data = http_get_json(url)
+    s, data = _reliable_get_json(url, timeout=10, retries=2)
     data = _checked_json(s, data, "Crossref")
     message = data.get("message")
     if not isinstance(message, dict):
@@ -450,7 +450,7 @@ def search_openalex(query: str, year_min: int = None, year_max: int = None,
     api_key = os.environ.get("OPENALEX_API_KEY")
     if api_key:
         url += f"&api_key={api_key}"
-    s, data = http_get_json(url)
+    s, data = _reliable_get_json(url, timeout=10, retries=2)
     data = _checked_json(s, data, "OpenAlex")
     results = _records(data, "results", "OpenAlex")
     return [_normalize_openalex(r) for r in results]
@@ -666,6 +666,10 @@ def search_semanticscholar(query: str, year_min: int = None, year_max: int = Non
     if api_key:
         headers["x-api-key"] = api_key
     s, data = _s2_request_with_retry(url, headers=headers)
+    if s == 429 and not api_key:
+        raise EngineResponseError(
+            "Semantic Scholar HTTP 429 (S2_API_KEY not set; apply free key at semanticscholar.org/product/api)"
+        )
     data = _checked_json(s, data, "Semantic Scholar")
     results = []
     for it in _records(data, "data", "Semantic Scholar"):
@@ -770,6 +774,23 @@ def _fetch_pubmed_details(pmids, tool, email, api_key, seconds=8):
     return details
 
 
+def _reliable_get_json(url: str, timeout: int = 10, retries: int = 2) -> tuple:
+    """Bounded JSON GET retry on transient connection/5xx/429 stalls (fits inside 25s worker timeout)."""
+    last_s, last_d = 0, {}
+    for attempt in range(retries):
+        s, data = http_get_json(url, timeout=timeout)
+        last_s, last_d = s, data
+        if s == 200:
+            return s, data
+        if s not in (0, 429, 500, 502, 503, 504) or attempt + 1 >= retries:
+            break
+        time.sleep(0.6 * (attempt + 1))
+    return last_s, last_d
+
+
+_pubmed_get_json = _reliable_get_json
+
+
 def search_pubmed(query: str, year_min: int = None, year_max: int = None,
                   limit: int = 50) -> List[Dict]:
     """PubMed (NCBI E-utilities): ~36M biomedical/biomedical-adjacent citations.
@@ -802,7 +823,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
     if api_key:
         esearch_url += f"&api_key={quote(api_key)}"
 
-    s, data = http_get_json(esearch_url, timeout=30)
+    s, data = _pubmed_get_json(esearch_url, timeout=10, retries=2)
     data = _checked_json(s, data, "PubMed")
     root = data.get("esearchresult")
     pmids = root.get("idlist") if isinstance(root, dict) and not root.get("errorlist") else None
@@ -826,7 +847,7 @@ def search_pubmed(query: str, year_min: int = None, year_max: int = None,
         if api_key:
             esummary_url += f"&api_key={quote(api_key)}"
 
-        s2, data2 = http_get_json(esummary_url, timeout=30)
+        s2, data2 = _pubmed_get_json(esummary_url, timeout=10, retries=2)
         try:
             data2 = _checked_json(s2, data2, "PubMed summary")
             result_root = data2.get("result")
@@ -963,7 +984,7 @@ def search_clinicaltrials(query: str, year_min: int = None, year_max: int = None
     url = base + "?" + _up.urlencode(params)
     _pubmed_throttle(0.4)  # ~2.5 RPS, polite to CT.gov
 
-    s, data = http_get_json(url, timeout=30)
+    s, data = _reliable_get_json(url, timeout=10, retries=2)
     data = _checked_json(s, data, "ClinicalTrials")
     studies = _records(data, "studies", "ClinicalTrials")
     results: List[Dict] = []
@@ -1183,7 +1204,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
              fields for pre-2010 papers. Set to 0 to disable and enrich
              all papers regardless of age.
     """
-    engines = (["crossref", "openalex", "arxiv", "semanticscholar", "aminer", "cnki", "pubmed", "clinicaltrials"]
+    engines = (["crossref", "openalex", "arxiv", "aminer", "pubmed", "clinicaltrials"]
                if engine == "all" else [e.strip() for e in engine.split(",")])
     engines = list(dict.fromkeys(engines))
     skipped_engines = {}
@@ -1195,7 +1216,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "crossref": search_crossref,
         "openalex": search_openalex,
         "arxiv": search_arxiv,
-        "semanticscholar": search_semanticscholar,
         # v3.9.11.8 (2026-08-09): PubMed medical engine, no auth required.
         "pubmed": search_pubmed,
         # v3.9.12.0 (2026-08-10): ClinicalTrials.gov, no auth, JSON API.
@@ -1204,7 +1224,7 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         "clinicaltrials": search_clinicaltrials,
         "core": search_core,
     }
-    # AMiner is optional 鈥?only include if token is set (avoid hard-fail on first run)
+    # AMiner is optional — only include if token is set (avoid hard-fail on first run)
     if "aminer" in engines:
         from .aminer_channel import _aminer_token
         if not _aminer_token():
@@ -1214,14 +1234,6 @@ def run_search(query: str, year_min: int = None, year_max: int = None,
         else:
             from .aminer_channel import search_aminer
             funcs["aminer"] = search_aminer
-    # CNKI is optional 鈥?only include if cookies exist (avoid hard-fail on first run)
-    if "cnki" in engines and not _try_import_cnki():
-        # Graceful skip: CNKI not configured yet; engines stays valid
-        engines = [e for e in engines if e != "cnki"]
-        skipped_engines["cnki"] = "not_configured"
-    elif "cnki" in engines:
-        from .cnki_channel import search_cnki
-        funcs["cnki"] = search_cnki
     for eng in engines:
         if eng not in funcs:
             by_engine[eng] = [{"error": "unsupported_engine", "message": "Unknown search engine"}]

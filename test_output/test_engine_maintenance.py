@@ -92,16 +92,15 @@ class EngineContracts(unittest.TestCase):
         self.assertEqual(result["engine_status"], {"openalex": "ok", "unsupported": "error"})
 
     def test_missing_optional_configuration_is_visible(self):
-        with patch("pa_cli.aminer_channel._aminer_token", return_value=""), \
-             patch.object(search, "_try_import_cnki", return_value=False):
+        with patch("pa_cli.aminer_channel._aminer_token", return_value=""):
             result = search.run_search("fixture", engine="aminer,cnki")
-        self.assertEqual(result["skipped_engines"], {"aminer": "not_configured", "cnki": "not_configured"})
-        self.assertEqual(result["engine_status"], {})
+        self.assertEqual(result["skipped_engines"], {"aminer": "not_configured"})
+        self.assertEqual(result["engine_status"], {"cnki": "error"})
 
     def test_pubmed_failed_summary_is_visible_with_year_filter(self):
         with patch.object(search, "http_get_json", side_effect=[
-                (200, {"esearchresult": {"idlist": ["1"]}}), (503, {})]), \
-             patch.object(search, "_pubmed_throttle"):
+                (200, {"esearchresult": {"idlist": ["1"]}}), (503, {}), (503, {})]), \
+             patch.object(search, "_pubmed_throttle"), patch.object(search.time, "sleep"):
             rows = search.search_pubmed("fixture", year_min=2020)
         self.assertEqual(rows[0]["error"], "partial_response")
 

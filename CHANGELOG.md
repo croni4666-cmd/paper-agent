@@ -1,3 +1,11 @@
+## v4.1.5 (2026-11-26)
+
+- Fix AMiner silent error swallowing in `_merge_aminer_results` and fail fast on expired/invalid JWT tokens (`code 40308` / HTTP 401/403).
+- Add bounded transient retry (`_reliable_get_json`, `timeout=10, retries=2`) for Crossref, OpenAlex, PubMed, and ClinicalTrials to prevent single proxy socket stalls from hitting the 25s engine deadline.
+- Support real NCBI PMC EFetch `<pmc-articleset>` single-article XML roots in `provenance.py` while strictly rejecting multi-article smuggling bundles.
+- Remove deprecated/unconfigured `semanticscholar` and `cnki` engines from default `all` search pool and `keys_registry.json`; update `pa doctor` offline checks accordingly.
+- Add dedicated regression suite `test_output/test_v4_1_5_fixes.py`.
+
 ## v4.1.4 (2026-10-17)
 
 - Validate batch PDFs, reject colliding output keys, preserve resume budgets and report failed job exits.
